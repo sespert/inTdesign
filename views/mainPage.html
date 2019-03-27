@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>inTdesign</title>
+    <!-- Add favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
+    <!-- Bootstrap Javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    
+    <div class="container text-center">
+        <br>
+        <h1>Let us build your webpage</h1>
+
+        <h3>Choose among these templates</h3>
+        <br>
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="../public/assets/images/template1.png" alt="Image" class="img-thumbnail">
+            </div>
+            <div class="col-lg-4">
+                <img src="../public/assets/images/template2.png" alt="Image" class="img-thumbnail">
+            </div>
+            <div class="col-lg-4">
+                <img src="../public/assets/images/template3.png" alt="Image" class="img-thumbnail">
+            </div>
+        </div>
+        <br>
+        <div>
+            <button type="button" class="btn btn-primary" id="yelpBtn">Yelp Users</button>
+            <button type="button" class="btn btn-success" id="nonYelpBtn">Non Yelp Users</button>
+        </div>
+        <div class="row" id="businessInput">
+            <input type="text" class="form-control" placeholder="Business Name" >
+            <input type="text" class="form-control" placeholder="City" >
+            <button type="button" class="btn btn-primary" id="searchYelp">Search</button>
+
+        </div>
+       
+
+        <br>
+        <div class="form-group" id="userForm">
+            <label for="name">Address</label>
+            <input type="text" class="form-control" id="name">            
+       
+            <label for="name">Phone Number</label>
+            <input type="text" class="form-control" id="picture"> 
+            
+            <button type="button" class="btn btn-primary" id="submitInfo">Submit</button>
+
+        </div>
+
+    
+
+    </div>
+
+    <script>
+
+    $(document).ready(function() {
+    
+        $("#businessInput").hide();
+        $("#userForm").hide();
+
+
+        $("#yelpBtn").on("click", function() {
+            $("#yelpBtn").hide();
+            $("#businessInput").show();
+            $("#nonYelpBtn").hide();
+        })
+
+        $("#nonYelpBtn").on("click", function() {
+            $("#nonYelpBtn").hide();
+            $("#yelpBtn").hide();
+            $("#userForm").show();
+
+        })
+
+    
+    });
+    
+    </script>
+</body>
+</html>
