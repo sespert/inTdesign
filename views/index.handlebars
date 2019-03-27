@@ -1,33 +1,63 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+ <div class="container text-center">
+        <br>
+        <h1>Let us build your webpage</h1>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+        <h3>Choose among these templates</h3>
+        <br>
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="../public/assets/images/template1.png" alt="Image" class="img-thumbnail">
+            </div>
+            <div class="col-lg-4">
+                <img src="../public/assets/images/template2.png" alt="Image" class="img-thumbnail">
+            </div>
+            <div class="col-lg-4">
+                <img src="../public/assets/images/template3.png" alt="Image" class="img-thumbnail">
+            </div>
+        </div>
+        <br>
+        <div>
+            <button type="button" class="btn btn-primary" id="yelpBtn">Yelp Users</button>
+            <button type="button" class="btn btn-success" id="nonYelpBtn">Non Yelp Users</button>
+        </div>
+        <div class="row" id="businessInput">
+            <input type="text" class="form-control" placeholder="Business Name" >
+            <input type="text" class="form-control" placeholder="City" >
+            <button type="button" class="btn btn-primary" id="searchYelp">Search</button>
+
+        </div>
+        <br>
+        <div class="form-group" id="userForm">
+            <label for="name">Address</label>
+            <input type="text" class="form-control" id="name">            
+       
+            <label for="name">Phone Number</label>
+            <input type="text" class="form-control" id="picture"> 
+            
+            <button type="button" class="btn btn-primary" id="submitInfo">Submit</button>
+        </div>
+    </div>
+
+    <script>
+
+    $(document).ready(function() {
+        //Hide the input forms
+        $("#businessInput").hide();
+        $("#userForm").hide();
+
+        //When yelp button is clicked, hide non yelp button and show input forms
+        $("#yelpBtn").on("click", function() {
+            $("#yelpBtn").hide();
+            $("#businessInput").show();
+            $("#nonYelpBtn").hide();
+        })
+
+        //When non-yelp button is clicked, hide yelp button and show input forms
+        $("#nonYelpBtn").on("click", function() {
+            $("#nonYelpBtn").hide();
+            $("#yelpBtn").hide();
+            $("#userForm").show();
+        })
+    });
+    
+    </script>

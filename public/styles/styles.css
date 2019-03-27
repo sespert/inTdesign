@@ -1,3 +1,54 @@
-.list-group-item {
-  line-height: 2.5;
+#logoImg {
+  width: 15%;
+  margin-left: 5%;
+  margin-top: 1%;
+  margin-bottom: 0;
 }
+
+#header {
+  height: 150px;;
+}
+
+#nav-mobile {
+  display: block;
+}
+
+#firstSection {
+  height: 500px;
+}
+
+#firstSection h2 {
+  margin-top: 0;
+  padding-top: 8%;
+}
+
+#firstSection p {
+  font-size: 25px;
+}
+
+#secondSection {
+  height: 500px;
+}
+
+#thirdSection {
+  height: 500px;
+}
+
+.secondary-content {
+  color: black;
+}
+
+.collection {
+  margin-top: 0;
+  padding-top: 8%;
+}
+
+/* .card-image {
+  width: 350px;
+} */
+
+#fourthSection {
+  height: 500px;
+}
+
+
