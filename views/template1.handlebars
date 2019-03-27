@@ -16,7 +16,7 @@
     <div class="light-blue lighten-5" id="firstSection">
         <div class="container">
           <!-- Business name -->
-          <h2>{{userInfo.name}}</h2>
+          <h2>{{userInfo.userName}}</h2>
           <p>{{userInfo.aboutUs}}</p>
 
         </div>
@@ -47,7 +47,7 @@
                 
                 {{#each menu}}
                 <li class="collection-item"><div>{{this.item}}<a class="secondary-content">${{this.price}}</a></div></li>
-            
+                {{/each}}
             </ul>
         </div>
     </div>
@@ -72,6 +72,7 @@
                           <ul>
                               {{#each userInfo}}
                             <li>{{this.schedule}}</li>
+                              {{/each}}
                           </ul>
                         </div>
                     </div>

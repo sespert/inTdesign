@@ -9,7 +9,7 @@ CREATE TABLE userInfo (
     address VARCHAR (255) NOT NULL DEFAULT "[]",
     phone VARCHAR (20) NOT NULL,
     email VARCHAR (255) NOT NULL,
-    logo VARCHAR (255),
+    logo BLOB (255),
     coordinates VARCHAR (255) DEFAULT "[]",
     rating VARCHAR (4),
     pictures TEXT DEFAULT "[]",
