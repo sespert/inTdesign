@@ -1,4 +1,4 @@
-<header>
+<header class="templ1-class">
       <nav id="header">
           <div class="nav-wrapper black">
               <img class="responsive-img" src="Logo.png" alt="" id="logoImg">
@@ -15,12 +15,38 @@
     
     <div class="light-blue lighten-5" id="firstSection">
         <div class="container">
-          <!-- Business name -->
-          <h2>{{userInfo.userName}}</h2>
-          <p>{{userInfo.aboutUs}}</p>
+          <div class="row">
+                <div class="col s10">
+                  <!-- Business name -->
+                  <h2>{{userInfo.userName}}</h2>
+                  <p>{{userInfo.aboutUs}}</p>
+                </div>
+                <div class="col s1 offset-s1">
+                  <!-- Social Media Icons  -->
+                  <span style="font-size: 4em; color: #ffeb3b;">
+                      <i class="fab fa-facebook-square"></i>
+                  </span>
+                  <br>
+                  <span style="font-size: 4em; color: #ffeb3b;">
+                      <i class="fab fa-instagram"></i>
+                    </span>
+                    <br>
+                  <span style="font-size: 4em; color: #ffeb3b;">
+                      <i class="fab fa-twitter-square"></i>
+                    </span>
+                    <br>
+                  <span style="font-size: 4em; color: #ffeb3b;">
+                      <i class="fab fa-yelp"></i>
+                    </span>                  
+                </div>
+          </div>
+      </div>
 
-        </div>
-    </div>
+    
+          
+                
+          
+            </div>
 
     <div class="slider" id="secondSection">
         <ul class="slides">
