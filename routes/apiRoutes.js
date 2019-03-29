@@ -17,9 +17,10 @@ module.exports = function(app, db) {
             location: city
         }).then(response => {
             var results = response.jsonBody.businesses;
-            for (var i = 0; i < results.length; i++){
-                console.log("name: " + results[i].name + " | address: " + results[i].location.display_address + " id: " + results[i].id);
-            }
+            // for (var i = 0; i < results.length; i++){
+            //     console.log("name: " + results[i].name + " | address: " + results[i].location.display_address + " id: " + results[i].id);
+            // }
+            res.render("index", {business : results});
             
         }). catch(error => {console.log(error)});
         
