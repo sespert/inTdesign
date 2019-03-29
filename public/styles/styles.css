@@ -1,23 +1,31 @@
-#logoImg {
+/* Styling for index.handlebars */
+.index-class h1 {
+  text-align: center;
+}
+
+
+/* Styling for template1.handlebars */
+
+.templ1-class #logoImg {
   width: 15%;
   margin-left: 5%;
   margin-top: 1%;
   margin-bottom: 0;
 }
 
-#header {
-  height: 150px;;
+.templ1-class #header {
+  height: 150px;
 }
 
-#nav-mobile {
+.templ1-class #nav-mobile {
   display: block;
 }
 
-#firstSection {
+.templ1-class #firstSection, .templ1-class #secondSection, .templ1-class #thirdSection, .templ1-class #fourthSection{
   height: 500px;
 }
 
-#firstSection h2 {
+.templ1-class #firstSection h2, .templ1-class .collection {
   margin-top: 0;
   padding-top: 8%;
 }
@@ -26,29 +34,13 @@
   font-size: 25px;
 }
 
-#secondSection {
-  height: 500px;
-}
-
-#thirdSection {
-  height: 500px;
-}
-
 .secondary-content {
   color: black;
-}
-
-.collection {
-  margin-top: 0;
-  padding-top: 8%;
 }
 
 /* .card-image {
   width: 350px;
 } */
 
-#fourthSection {
-  height: 500px;
-}
 
 
