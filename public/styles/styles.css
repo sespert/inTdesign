@@ -42,5 +42,39 @@
   width: 350px;
 } */
 
+/* Styling for template2.handlebars */
+
+.templ2-class #header {
+  height: 100px;
+  margin-top: 50px;
+}
+.templ2-class #header li {
+  margin-right: 20px;
+  margin-top: 20px;
+  width: 250px;
+  text-align: center;
+}
+.templ2-class #logoImg {
+  width: 15%;
+  margin-left: 5%;
+}
+.templ2-class nav ul a {
+  font-size: 1.5rem;
+}
+.templ2-class #secondSection {
+  margin-top: 5%;
+  height: 50px;
+}
+.templ2-class #thirdSection {
+  margin-top: 8%;
+}
+.templ2-class .materialboxed {
+  margin-top: 50px;
+  margin-left: 130px;
+}
+
+
+
+
 
 
