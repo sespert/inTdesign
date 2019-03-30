@@ -6,6 +6,7 @@ var yelpKey = keys.apiKey;
 var client = yelp.client(yelpKey);
 var db = require("../models");
 console.log(yelpKey);
+
 module.exports = function(app, db) {
     app.get("/api/yelp/:businessName/:city", function(req, res) {
         var name = req.params.businessName;
@@ -22,11 +23,10 @@ module.exports = function(app, db) {
             // for (var i = 0; i < results.length; i++){
             //     console.log("name: " + results[i].name + " | address: " + results[i].location.display_address + " id: " + results[i].id);
             // }
-            console.log(results);
-            res.render("index", {business : results});
+            console.log("Yelp results", results);
+            res.render("index", {business: results});
+            console.log("*************************************************************************************************************************");
             
-        })
-        // .catch(error => {console.log(error)});
-        
+        }).catch(error => {console.log(error)});        
     });
 };
