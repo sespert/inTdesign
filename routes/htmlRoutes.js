@@ -4,11 +4,12 @@ module.exports = function(app) {
   // Load index page
 
   // loads all users
-  app.get("/all_users", function(req, res) {
-    db.users.findAll().then(function(allUserInfo) {
-      console.log(res);
-      res.render("index", { userInfo: allUserInfo });
-    });
+  app.get("/", function(req, res) {
+    // db.users.findAll().then(function(allUserInfo) {
+    //   console.log(res);
+    //   res.render("index", { userInfo: allUserInfo });
+    // });
+    res.render("index");
   });
   // loads all modules
   app.get("/modules", function(req, res) {
