@@ -24,7 +24,7 @@ module.exports = function(app, db) {
             //     console.log("name: " + results[i].name + " | address: " + results[i].location.display_address + " id: " + results[i].id);
             // }
             console.log("Yelp results", results);
-            res.render("index", {business: results});
+            res.json(results);
             console.log("*************************************************************************************************************************");
             
         }).catch(error => {console.log(error)});        

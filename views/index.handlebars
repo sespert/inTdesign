@@ -51,6 +51,12 @@
             <a class="waves-effect waves-light btn modal-trigger" id="searchYelp" href="#modal1">Search</a>
             <a class="waves-effect waves-light btn home">Home</a>
         </div>
+    <div>
+        {{#each business}}
+                <a href="#!" class="collection-item">{{this.name}}</a>
+                <a href="#!" class="collection-item">{{this.location.display_address}}</a>
+                {{/each}}
+                </div>
                    
         <div class="row" id="businessForm">
             <form class="col s12">
@@ -75,10 +81,11 @@
             <div class="modal-content">
             <h4>List of Business</h4>
             <div class="collection">
-                {{#each business}}
-                <a href="#!" class="collection-item">{{this.name}}</a>
-                <a href="#!" class="collection-item">{{this.location.display_address}}</a>
-                {{/each}}
+                <ul id="modal-info">
+
+                </ul>
+                
+                
             </div>
             </div>
             <div class="modal-footer">
@@ -122,16 +129,46 @@
             var newBusiness = $("#business_name").val().trim();
             var city= $("#business_location").val().trim();
             console.log(newBusiness, city);
-
-                $.ajax("/api/yelp/" + newBusiness + "/" + city, {
+            var query = "/api/yelp/" + newBusiness + "/" + city;
+            console.log(query);
+                $.ajax(query, {
                     type: "GET"                    
-                }).then(function() {
-                    console.log ("call back function from get call"); 
+                }).then(function(data) {
+                    
+                    var businessArr =[];
+                    for (var i=0; i<data.length; i++){
+                        var business={
+                            name: data[i].name,
+                            address: data[i].location.display_address,
+                            id: data[i].id
+                        };
+                        
+                        businessArr.push(business);
+                    };
+                    
+                    for (var i=0; i<businessArr.length; i++){
+                        var li= $("<li>");
+                        var button = $("<button class='select-business'>");
+                        
+                        li.text(businessArr[i].name + " " + businessArr[i].address);
+                        button.attr("data-id", businessArr[i].id);
+                        
+                        $("#modal-info").append(li);
+                        $("#modal-info").append(button);
+
+                    };
+
+
                     $('.modal').modal();
                     $('#modal1').modal('open');                                      
                 }
             );
-        })
+        });
+
+        $(".modal").on("click", ".select-business", function(event){
+            var id = $(this).data("id");
+            console.log(id);
+        });
        
 
     
