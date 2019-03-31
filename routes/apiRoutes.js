@@ -3,7 +3,6 @@ var request = require("request");
 var http = require("https");
 var keys = require("./keys");
 var yelp = require("yelp-fusion");
-// var yelpKey="6mOLysbB4TWzxVVj53g49Xjlq-pH4r8wrkdguf3gUtdl9irTVoT4EKJWjhCmdT2_yV558KNdUkDQDmKugwWExwEbdO9jYg2yQanVWmxULR4naCadfCBuSU79TWyWXHYx";
 var yelpKey = keys.apiKey;
 var client = yelp.client(yelpKey);
 var db = require("../models");
@@ -13,20 +12,16 @@ module.exports = function (app) {
 
     app.get("/api/yelp/:businessName/:city", function (req, res) {
         var name = req.params.businessName;
-        // var city = "miami";
+        
         var city = req.params.city;
-        // console.log(name, city);
-
+        
         client.search({
             term: name,
             location: city
         }).then(response => {
-            console.log(name, city);
+            
             var results = response.jsonBody.businesses;
-            // for (var i = 0; i < results.length; i++){
-            //     console.log("name: " + results[i].name + " | address: " + results[i].location.display_address + " id: " + results[i].id);
-            // }
-            console.log("Yelp results", results);
+            
             res.json(results);
 
 
@@ -66,22 +61,7 @@ module.exports = function (app) {
                     'Content-Type': 'application/json'
                 },
                 body: dataObject,
-                // {
-                //     userName: 'Another business',
-                //     yelpId: '123456',
-                //     address: '8800 NW 77 ST, Miami, Fl 33166',
-                //     phone: '+7861231234',
-                //     email: 'albert@einstein.com',
-                //     logo: 'some image that we need to figure out how to save',
-                //     coordinates: '[25.3685, 36.2145687]',
-                //     rating: '$$$$',
-                //     pictures: '[https://i.pinimg.com/236x/12/ce/a7/12cea7ff405601b2dc8db28943ad129e--mexicans-hot-dog.jpg, https://www.101dogbreeds.com/wp-content/uploads/2014/10/Chiweenie-Pictures.jpg, https://i0.wp.com/puppytoob.com/wp-content/uploads/2015/04/chiweenie-puppies-1.jpg?]',
-                //     schedule: '[{array: of, many:objecte}]',
-                //     services: 'Menu.pdf',
-                //     aboutUs: 'aboutUs.pdf',
-                //     businessType: 1,
-                //     modules: '[1,2,3,5]'
-                // },
+                
                 json: true
             };
 
@@ -103,8 +83,45 @@ module.exports = function (app) {
     app.post("/api/addBusiness", function (req, res) {
         var newBusiness = req.body;
         var coord = [newBusiness.coordinates.latitude, newBusiness.coordinates.longitude];
-        console.log("--------------------------------------------------",newBusiness.hours[0].open);
-        
+        var hours = [];
+        var hoursArr =newBusiness.hours[0].open;
+        console.log("--------------------------------------------------",hoursArr);
+
+        for (var i = 0; i < hoursArr.length; i++){
+            var day;
+            console.log("hours array",hoursArr[i].day);
+            switch(hoursArr[i].day) {
+                case 0:
+                    day = "Mon: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                    hours.push(day);
+                    break;
+                case 1:
+                    day = "Tue: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                    hours.push(day);
+                break;
+                case 2:
+                    day = "Wed: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                    hours.push(day);
+                    break;
+                case 3:
+                    day = "Thu: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                    hours.push(day);
+                    break;
+                case 4:
+                    day = "Fri: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                    hours.push(day);
+                    break;
+                case 5:
+                    day = "Sat: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                    hours.push(day);
+                    break;
+                case 6:
+                    day = "Sun: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                    hours.push(day);
+                    break;
+            }
+        };
+        console.log(hours);
         
         db.users.create({
             userName: newBusiness.name,
@@ -116,7 +133,7 @@ module.exports = function (app) {
             coordinates: coord.toString(),
             rating: newBusiness.rating,
             pictures: newBusiness.photos.toString(),
-            schedule: newBusiness.hours[0].open.toString(),
+            schedule: hours.toString(),
             // services: newBusiness.schedule,
             // aboutUs: newBusiness.aboutUs,
             businessType: 1,
