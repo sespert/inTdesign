@@ -29,13 +29,19 @@ module.exports = function(app) {
   // Get user info by chosen Id and populates the chosen template
   app.get("/template1/:id", function(req, res) {
     db.users.findOne({ where: { id: req.params.id } }).then(function(userInfo) {
-      console.log(userInfo);
+      console.log("=============================",userInfo);
       res.render("template1", {userInfo: userInfo});
     });
   });
   app.get("/template2/:id", function(req, res) {
     db.users.findOne({ where: { id: req.params.id } }).then(function(userInfo) {
-      console.log(userInfo);
+      var coordArr=userInfo.dataValues.coordinates.split(",");
+      var schedArr=userInfo.dataValues.schedule.split(",");
+      var pictArr=userInfo.dataValues.pictures.split(",");
+      userInfo.dataValues.coordinates = coordArr;
+      userInfo.dataValues.schedule = schedArr;
+      userInfo.dataValues.pictures = pictArr;
+      // console.log("What's this? =============================",userInfo.dataValues);
       res.render("template2", {userInfo: userInfo});
     });
   });
