@@ -86,6 +86,10 @@
   width: 100%;  
 }
 
+#sched-content {
+  margin: auto;
+}
+
 .carousel-img {
   height: 350px;
   width: auto;

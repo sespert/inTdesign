@@ -98,7 +98,9 @@
           <div class="card medium black darken-1">
             <div class="card-content white-text center">
               <span class="card-title">Hours of Operation</span>
-              {{userInfo.schedule}}              
+              <div id="sched-content">
+
+                </div>           
             </div>
           </div>
         </div>
@@ -126,6 +128,7 @@
       
     });
     autoplay();
+    fillSchedule();
     
   });
   function initMap() {
@@ -157,6 +160,17 @@
   function autoplay() {
     $('.carousel').carousel('next');
     setTimeout(autoplay, 3000);
+  }
+
+  function fillSchedule() {
+    var scheString = "{{userInfo.schedule}}";
+    var scheArr = scheString.split(",");
+    console.log(scheArr);
+    for (var i = 0; i < scheArr.length; i++) {
+      var pVar = $("<p>");
+      pVar.text(scheArr[i]);
+      $("#sched-content").append(pVar);
+    }
   }
 
 
