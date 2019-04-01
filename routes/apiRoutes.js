@@ -74,7 +74,7 @@ module.exports = function (app) {
 
 
 
-            res.json(data);
+            // res.json(data);
         });
 
 
