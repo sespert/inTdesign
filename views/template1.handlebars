@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="row" id="secondSection">
-      <div class="col s4">
+        {{!-- <div class="col s4">
         <img class="materialboxed" width="350"
           src="https://s3-media4.fl.yelpcdn.com/bphoto/2FT4IMF12cN81sNNGYxnOw/o.jpg">
       </div>
@@ -56,17 +56,12 @@
         <img class="materialboxed" width="350"
           src="https://s3-media1.fl.yelpcdn.com/bphoto/74NHa0q0E9hhdyrilbUDPA/o.jpg">
       </div>
-    </div>
-    {{!--  <div class="slider" id="secondSection"></div>
-      <ul class="slides">
-        <li>
-        <img height="250" src="{{userInfo.pictures}}">
-        </li>
-        <li>
-        <img class="materialboxed" width="250" src="https://s3-media4.fl.yelpcdn.com/bphoto/2FT4IMF12cN81sNNGYxnOw/o.jpg">
-        </li>
-      </ul>
-      </div>  --}}
+    </div> 
+    <div class="slider" id="secondSection"></div> --}}
+      <div class="carousel carousel-slider" id="template-slider">
+        
+      </div>
+    </div> 
 
     <div class="light-blue lighten-5" id="thirdSection">
       <div class="container">
@@ -125,8 +120,12 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEksOUoC96zDNpnC_IkaTfzxjokwUCnac&callback=initMap" type="text/javascript">  </script>
 <script>
   $(document).ready(function () {
+    fillSlider();
     $('.slider').slider();
-    $('.carousel').carousel();
+    $('.carousel.carousel-slider').carousel({
+      
+    });
+    autoplay();
     
   });
   function initMap() {
@@ -136,14 +135,31 @@
     var latitude = parseFloat(coordString.substr(0,index));
     var longitude = parseFloat(coordString.substr(index+1));
     var coordi = {lat: latitude, lng: longitude}
-    console.log(latitude+" long "+ longitude);
-    // The map, centered at Uluru
     var map = new google.maps.Map(
       document.getElementById('map-display'), { zoom: 16, center: coordi });
-    // The marker, positioned at Uluru
     var marker = new google.maps.Marker({ position: coordi, map: map });
+  };
 
+  function fillSlider() {
+    var pictString = "{{userInfo.pictures}}";
+    var picArray = pictString.split(",");
+    console.log(picArray);
+    for (var i = 0; i < picArray.length; i++){
+      var aVar = $("<a class='carousel-item'>");
+      aVar.attr("href", "#"+i);
+      var imgVar = $("<img class ='carousel-img'>");
+      imgVar.attr("src", picArray[i]);
+      aVar.append(imgVar);
+      $("#template-slider").append(aVar);
+    }
   }
+
+  function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 3000);
+  }
+
+
 </script>
 
 
