@@ -6,10 +6,11 @@
 /* Styling for template1.handlebars */
 
 .templ1-class #logoImg {
-  width: 15%;
-  margin-left: 5%;
-  margin-top: 1%;
-  margin-bottom: 0;
+  width: 10%;
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  background-color: #ffeb3b;
 }
 
 .templ1-class #header {
@@ -28,8 +29,8 @@
   margin-top: 0;
   padding-top: 8%;
 }
-.templ1-class #secondSection {
-  height: 500px;
+.templ1-class #template-slider {
+  /* height: 1000px; */
   margin-left: 50px;
   margin-top: 20px;
 }
@@ -39,16 +40,14 @@
 .templ1-class .secondary-content {
   color: black;
 }
+.templ1-class #template-slider .carousel-img {
+  height: 350px;
+  width: auto;
+}
 .templ1-class #fourthSection {
   height: 450px;
 }
-/* .templ1-class #scheduleDiv {
-  width: 40px;
-} */
 
-/* .card-image {
-  width: 350px;
-} */
 
 /* Styling for template2.handlebars */
 
@@ -63,8 +62,10 @@
   text-align: center;
 }
 .templ2-class #logoImg {
-  width: 15%;
-  margin-left: 5%;
+  width: 10%;
+  position: absolute;
+  left: 20px;
+  top: 8px;
 }
 .templ2-class nav ul a {
   font-size: 1.5rem;
@@ -76,11 +77,9 @@
 .templ2-class #thirdSection {
   margin-top: 8%;
 }
-.templ2-class .materialboxed {
-  margin-top: 50px;
-  margin-left: 130px;
+.templ2-class #pictureRow {
+  margin-left: 150px;
 }
-
 #map-display {
   height: 400px;
   width: 100%;  
@@ -90,14 +89,9 @@
   margin: auto;
 }
 
-.carousel-img {
-  height: 350px;
-  width: auto;
-
-}
 
 
 
-
+            
 
 
