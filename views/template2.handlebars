@@ -64,19 +64,7 @@
 
     <div class="grey" id="thirdSection">
       <div class="row" id="pictureRow">
-            {{!-- <div class="col s4">
-                <img class="materialboxed" width="300" src="{{userInfo.pictures1}}">
-            </div>
-            <div class="col s4">
-                <img class="materialboxed" width="300" src="https://s3-media4.fl.yelpcdn.com/bphoto/2FT4IMF12cN81sNNGYxnOw/o.jpg">
-            </div>
-             <div class="col s4">
-                <img class="materialboxed" width="300" src="{{userInfo.pictures3}}">
-            </div> --}}
-        <div class="carousel carousel-slider" id="template-slider">
         
-        </div>
-
       </div>
       <div class="row center" id="textRow">
         <div class="col s3 ">            
@@ -139,14 +127,14 @@
     var picArray = pictString.split(",");
     console.log(picArray);
     for (var i = 0; i < picArray.length; i++){
-      var aVar = $("<a class='carousel-item'>");
-      aVar.attr("href", "#"+i);
-      var imgVar = $("<img class ='carousel-img'>");
+      var divVar = $("<div class='col s4 template2-img'>");
+      var imgVar = $("<img class ='materialboxed' width='400' height='400'>");
       imgVar.attr("src", picArray[i]);
-      aVar.append(imgVar);
-      $("#template-slider").append(aVar);
+      divVar.append(imgVar);
+      $("#pictureRow").append(divVar);
     }
   }
+
 
   function autoplay() {
     $('.carousel').carousel('next');
