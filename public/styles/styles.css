@@ -1,6 +1,6 @@
 /* Styling for index.handlebars */
-.index-class h1 {
-  text-align: center;
+.index-class #modal-info .select-business {
+  margin-right: 0%;
 }
 
 
