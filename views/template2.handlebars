@@ -37,7 +37,7 @@
 
           <nav id="header">
               <div class="nav-wrapper grey">
-                  <img class="responsive-img" src="logo.png" alt="" id="logoImg">
+                  <img class="responsive-img" src={{userInfo.logo}} alt="" id="logoImg">
 
                   <ul class="right hide-on-med-and-down">
                     <!-- Business address phone and email -->
@@ -56,16 +56,22 @@
 
     <div class="grey" id="thirdSection">
       <div class="row" id="pictureRow">
-        {{#each userInfo}}
-            <div class="col s4">
-                <img class="materialboxed" width="400" src="{{this.pictures}}">
-            </div>
-        {{/each}}
+      <div class="col s4">
+          <img class="materialboxed" width="300" src="{{userInfo.pictures}}">
+      </div>
+      <div class="col s4">
+          <img class="materialboxed" width="300" src="https://s3-media4.fl.yelpcdn.com/bphoto/2FT4IMF12cN81sNNGYxnOw/o.jpg">
+      </div>
+      <div class="col s4">
+        <img class="materialboxed" width="300" src="{{userInfo.pictures}}">
+      </div>
+
       </div>
       <div class="row center" id="textRow">
         <div class="col s3 ">            
             <div class="card lime darken-1">
               <div class="card-content">
+                <p>About Us</p>
                 <p>{{userInfo.aboutUs}}</p>
               </div>
             </div>        
@@ -80,10 +86,8 @@
         <div class="col s3 offset-s1">
             <div class="card lime darken-1">
               <div class="card-content">
-                <p class="card-title">Store Hours</p>
-                    {{#each userInfo.schedule}}
-                <p>{{this.schedule}}</p>
-                    {{/each}}
+                <p class="card-title">Store Hours</p>                    
+                <p>{{userInfo.schedule}}</p>                    
               </div>
             </div> 
         </div>
