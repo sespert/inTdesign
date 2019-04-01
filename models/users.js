@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
       email: DataTypes.STRING,
       logo: {
         type: DataTypes.STRING,
-        defaultValue: "https://cdn.dribbble.com/users/261302/screenshots/1361907/logoplaceholder.png"
+        defaultValue: "https://baseload.com/wp-content/uploads/2018/07/logo-placeholder@2x.png"
       },
       coordinates: DataTypes.STRING,
       rating: DataTypes.STRING,
