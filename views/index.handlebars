@@ -1,173 +1,171 @@
 <div class="container text-center index-class">
-        
-        <h1>Let us build your webpage</h1>
-        
-        <h3>Choose among these templates</h3>
-        
-        <div class="row">
-            <div class="col s4 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="assets/images/template1.png" >
-                        <span class="card-title">Template 1</span>
-                    </div>
+
+    <h1>Let us build your webpage</h1>
+
+    <h3>Choose among these templates</h3>
+
+    <div class="row">
+        <div class="col s4 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="assets/images/template1.png">
+                    <span class="card-title">Template 1</span>
                 </div>
             </div>
-            <div class="col s4 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="assets/images/template2.png" >
-                        <span class="card-title">Template 2</span>
-                    </div>
+        </div>
+        <div class="col s4 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="assets/images/template2.png">
+                    <span class="card-title">Template 2</span>
                 </div>
             </div>
-            <div class="col s4 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="assets/images/template3.png" >
-                        <span class="card-title">Template 3</span>
-                    </div>
+        </div>
+        <div class="col s4 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="assets/images/template3.png">
+                    <span class="card-title">Template 3</span>
                 </div>
-            </div>            
+            </div>
         </div>
+    </div>
 
-        <div class="center">
-            <a class="waves-effect waves-light btn" id="yelpBtn">Yelp Users</a>
-            <a class="waves-effect waves-light btn" id="nonYelpBtn">Non Yelp Users</a>
-        </div>
+    <div class="center">
+        <a class="waves-effect waves-light btn" id="yelpBtn">Yelp Users</a>
+        <a class="waves-effect waves-light btn" id="nonYelpBtn">Non Yelp Users</a>
+    </div>
 
-        <div class="row" id="businessInput">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="business_name" type="text" class="validate">
-                        <label for="business_name">Business Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                      <input id="business_location" type="text" class="validate">
-                      <label for="business_location">Location</label>
-                    </div>
-                  </div>
+    <div class="row" id="businessInput">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="business_name" type="text" class="validate">
+                    <label for="business_name">Business Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="business_location" type="text" class="validate">
+                    <label for="business_location">Location</label>
+                </div>
+            </div>
             <a class="waves-effect waves-light btn modal-trigger" id="searchYelp" href="#modal1">Search</a>
             <a class="waves-effect waves-light btn home">Home</a>
-        </div>
-                   
-        <div class="row" id="businessForm">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="business_name" type="text" class="validate">
-                        <label for="business_name">Business Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="business_phone" type="text" class="validate">
-                        <label for="business_phone">Phone Number</label>
-                    </div>
-                </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i class="material-icons right"></i>
-                </button>
-                <a class="waves-effect waves-light btn home">Home</a>
-        </div>
+    </div>
 
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
+    <div class="row" id="businessForm">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="business_name" type="text" class="validate">
+                    <label for="business_name">Business Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="business_phone" type="text" class="validate">
+                    <label for="business_phone">Phone Number</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right"></i>
+            </button>
+            <a class="waves-effect waves-light btn home">Home</a>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
             <h4>List of Business</h4>
             <div class="collection">
                 <ul id="modal-info">
 
                 </ul>
-                
-                
-            </div>
-            </div>
-            <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+
+
             </div>
         </div>
-       
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
     </div>
 
-    <script>
+</div>
 
-    $(document).ready(function() {
-         
-    
+<script>
+
+    $(document).ready(function () {
+
+
         $("#businessInput").hide();
         $("#businessForm").hide();
 
 
-        $("#yelpBtn").on("click", function() {
+        $("#yelpBtn").on("click", function () {
             $("#yelpBtn").hide();
             $("#businessInput").show();
             $("#nonYelpBtn").hide();
         })
 
-        $("#nonYelpBtn").on("click", function() {
+        $("#nonYelpBtn").on("click", function () {
             $("#nonYelpBtn").hide();
             $("#yelpBtn").hide();
             $("#businessForm").show();
         })
 
-        $(".home").on("click", function() {
+        $(".home").on("click", function () {
             $("#yelpBtn").show();
             $("#nonYelpBtn").show();
             $("#businessInput").hide();
             $("#businessForm").hide();
         })
 
-        $("#searchYelp").on("click", function() {
+        $("#searchYelp").on("click", function () {
             event.preventDefault();
-
+            $("#modal-info").empty();
+            
             var newBusiness = $("#business_name").val().trim();
-            var city= $("#business_location").val().trim();
+            var city = $("#business_location").val().trim();
             console.log(newBusiness, city);
             var query = "/api/yelp/" + newBusiness + "/" + city;
             console.log(query);
-                $.ajax(query, {
-                    type: "GET"                    
-                }).then(function(data) {
-                    
-                    var businessArr =[];
-                    for (var i=0; i<data.length; i++){
-                        var business={
-                            name: data[i].name,
-                            address: data[i].location.display_address,
-                            id: data[i].id
-                        };
-                        
-                        businessArr.push(business);
-                    };
-                    
-                    for (var i=0; i<businessArr.length; i++){
-                        var li= $("<li>");
-                        var button = $('<a href="#!" class="secondary-content select-business"><i class="material-icons">send</i></a>');
-                        
-                        li.text(businessArr[i].name + " " + businessArr[i].address);
-                        button.attr("data-id", businessArr[i].id);
-                        
-                        li.append(button);
-                        $("#modal-info").append(li);
-                        
+            $.ajax(query, {
+                type: "GET"
+            }).then(function (data) {
 
+
+                var businessArr = [];
+                for (var i = 0; i < data.length; i++) {
+                    var business = {
+                        name: data[i].name,
+                        address: data[i].location.display_address,
+                        id: data[i].id
                     };
 
+                    businessArr.push(business);
+                };
 
-                    $('.modal').modal();
-                    $('#modal1').modal('open');                                      
-                }
+                for (var i = 0; i < businessArr.length; i++) {
+                    var li = $("<li>");
+                    var button = $('<a href="#!" class="secondary-content select-business"><i class="far fa-hand-pointer"></i></a>');
+                    li.text(businessArr[i].name + " " + businessArr[i].address);
+                    button.attr("data-id", businessArr[i].id);
+
+                    li.append(button);
+                    $("#modal-info").append(li);
+                };
+
+                $('.modal').modal();
+                $('#modal1').modal('open');
+            }
             );
         });
 
-        $(".modal").on("click", ".select-business", function(event){
+        $(".modal").on("click", ".select-business", function (event) {
             var id = $(this).data("id");
             console.log(id);
-        
-        });
-       
 
-    
+        });
+
+
+
     });
-    
-    </script>
+
+</script>

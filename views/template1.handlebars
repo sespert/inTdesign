@@ -1,116 +1,130 @@
 <div class="templ1-class">
   <header>
-      <nav id="header">
-          <div class="nav-wrapper black">
-              <img class="responsive-img" src="Logo.png" alt="" id="logoImg">
+    <nav id="header">
+      <div class="nav-wrapper black">
+        <img class="responsive-img" src="Logo.png" alt="" id="logoImg">
 
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <!-- Business address phone and email -->
-              <li><a href="">{{userInfo.address}}</a></li>
-              <li><a href="">{{userInfo.phone}}</a></li>
-              <li><a href="">{{userInfo.email}}</a></li>
-            </ul>
-      </nav>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <!-- Business address phone and email -->
+          <li><a href="">{{userInfo.address}}</a></li>
+          <li><a href="">{{userInfo.phone}}</a></li>
+          <li><a href="">{{userInfo.email}}</a></li>
+        </ul>
+    </nav>
   </header>
 
   <main>
-    
+
     <div class="light-blue lighten-5" id="firstSection">
-        <div class="container">
-          <div class="row">
-                <div class="col s10">
-                  <!-- Business name -->
-                  <h2>{{userInfo.userName}}</h2>
-                  <p>{{userInfo.aboutUs}}</p>
-                </div>
-                <div class="col s1 offset-s1">
-                  <!-- Social Media Icons  -->
-                  <span style="font-size: 4em; color: #ffeb3b;">
-                      <i class="fab fa-facebook-square"></i>
-                  </span>
-                  <br>
-                  <span style="font-size: 4em; color: #ffeb3b;">
-                      <i class="fab fa-instagram"></i>
-                    </span>
-                    <br>
-                  <span style="font-size: 4em; color: #ffeb3b;">
-                      <i class="fab fa-twitter-square"></i>
-                    </span>
-                    <br>
-                  <span style="font-size: 4em; color: #ffeb3b;">
-                      <i class="fab fa-yelp"></i>
-                    </span>                  
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col s10">
+            <!-- Business name -->
+            <h2>{{userInfo.userName}}</h2>
+            <p>{{userInfo.aboutUs}}</p>
           </div>
+          <div class="col s1 offset-s1">
+            <!-- Social Media Icons  -->
+            <span style="font-size: 4em; color: #ffeb3b;">
+              <i class="fab fa-facebook-square"></i>
+            </span>
+            <br>
+            <span style="font-size: 4em; color: #ffeb3b;">
+              <i class="fab fa-instagram"></i>
+            </span>
+            <br>
+            <span style="font-size: 4em; color: #ffeb3b;">
+              <i class="fab fa-twitter-square"></i>
+            </span>
+            <br>
+            <span style="font-size: 4em; color: #ffeb3b;">
+              <i class="fab fa-yelp"></i>
+            </span>
+          </div>
+        </div>
       </div>
-
-    
-          
-                
-          
-            </div>
-
-    <div class="carousel">
-      
-    <a class="carousel-item" href="#one!"><img src="{{itemAt userInfo.pictures 1}}"></a>
-      
-  </div> 
+    </div>
+    <div class="row" id="secondSection">
+      <div class="col s4">
+        <img class="materialboxed" width="350"
+          src="https://s3-media4.fl.yelpcdn.com/bphoto/2FT4IMF12cN81sNNGYxnOw/o.jpg">
+      </div>
+      <div class="col s4">
+        <img class="materialboxed" width="350" src="{{userInfo.pictures}}">
+      </div>
+      <div class="col s4">
+        <img class="materialboxed" width="350"
+          src="https://s3-media1.fl.yelpcdn.com/bphoto/74NHa0q0E9hhdyrilbUDPA/o.jpg">
+      </div>
+    </div>
+    {{!--  <div class="slider" id="secondSection"></div>
+      <ul class="slides">
+        <li>
+        <img height="250" src="{{userInfo.pictures}}">
+        </li>
+        <li>
+        <img class="materialboxed" width="250" src="https://s3-media4.fl.yelpcdn.com/bphoto/2FT4IMF12cN81sNNGYxnOw/o.jpg">
+        </li>
+      </ul>
+      </div>  --}}
 
     <div class="light-blue lighten-5" id="thirdSection">
-        <div class="container">
-            <ul class="collection with-header">
-                <li class="collection-header"><h4>Menu</h4></li>
-                
-                {{#each menu}}
-                <li class="collection-item"><div>{{this.item}}<a class="secondary-content">${{this.price}}</a></div></li>
-                {{/each}}
-            </ul>
-        </div>
-    </div>
+      <div class="container">
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <h4>Menu</h4>
+          </li>
 
-    <div class="" id="fourthSection">
-        <div class="container">
-            <div class="row">
-                <div class="col s6 m6">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="maps.png">
-                      {{!-- HERE NEEDS TO GO THE GOOGLE API FOR THE COORDINATES --}}
-                      <span class="card-title black">Location</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col s6 m6">
-                    <div class="card black darken-1">
-                        <div class="card-content white-text center">
-                          <span class="card-title">Hours of Operation</span>
-                          <ul>
-                         
-                            <li>{{userInfo.schedule}}</li>
-                           
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-              </div>
-        </div>
-    </div>
-    
-  </main>
-   
-  <footer class="page-footer black">
-      <div class="footer-copyright">
-          <div class="container center">
-            © 2019 Copyright
-          </div>
+          {{#each menu}}
+          <li class="collection-item">
+            <div>{{this.item}}<a class="secondary-content">${{this.price}}</a></div>
+          </li>
+          {{/each}}
+        </ul>
       </div>
+    </div>
+
+
+    <div class="container" id="fourthSection">
+      <div class="row">
+
+        <div class="col s6 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="/assets/images/maps.png">
+              {{!-- HERE NEEDS TO GO THE GOOGLE API FOR THE COORDINATES --}}
+              <span class="card-title black">Location</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s6 m6" id="scheduleDiv">
+          <div class="card medium black darken-1">
+            <div class="card-content white-text center">
+              <span class="card-title">Hours of Operation</span>
+              {{userInfo.schedule}}              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer class="page-footer black">
+    <div class="footer-copyright">
+      <div class="container center">
+        © 2019 Copyright
+      </div>
+    </div>
   </footer>
 
 </div>
 
 <script>
-$(document).ready(function(){
+  $(document).ready(function () {
     $('.slider').slider();
+    $('.carousel').carousel();
   });
 </script>

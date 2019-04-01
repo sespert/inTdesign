@@ -35,12 +35,12 @@ module.exports = function(app) {
   });
   app.get("/template2/:id", function(req, res) {
     db.users.findOne({ where: { id: req.params.id } }).then(function(userInfo) {
-      var coordArr=userInfo.dataValues.coordinates.split(",");
-      var schedArr=userInfo.dataValues.schedule.split(",");
-      var pictArr=userInfo.dataValues.pictures.split(",");
-      userInfo.dataValues.coordinates = coordArr;
-      userInfo.dataValues.schedule = schedArr;
-      userInfo.dataValues.pictures = pictArr;
+      // var coordArr=userInfo.dataValues.coordinates.split(",");
+      // var schedArr=userInfo.dataValues.schedule.split(",");
+      // var pictArr=userInfo.dataValues.pictures.split(",");
+      // userInfo.dataValues.coordinates = coordArr;
+      // userInfo.dataValues.schedule = schedArr;
+      // userInfo.dataValues.pictures = pictArr;
       // console.log("What's this? =============================",userInfo.dataValues);
       res.render("template2", {userInfo: userInfo});
     });
