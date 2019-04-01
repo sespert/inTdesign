@@ -2,7 +2,7 @@
   <header>
     <nav id="header">
       <div class="nav-wrapper black">
-        <img class="responsive-img" src="Logo.png" alt="" id="logoImg">
+        <img class="responsive-img" src="{{userInfo.logo}}" alt="" id="logoImg">
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <!-- Business address phone and email -->
@@ -91,7 +91,10 @@
         <div class="col s6 m6">
           <div class="card">
             <div class="card-image">
-              <img src="/assets/images/maps.png">
+              <div id="map-display">
+
+              </div>
+              {{!-- <img src="/assets/images/maps.png"> --}}
               {{!-- HERE NEEDS TO GO THE GOOGLE API FOR THE COORDINATES --}}
               <span class="card-title black">Location</span>
             </div>
@@ -121,10 +124,28 @@
   </footer>
 
 </div>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEksOUoC96zDNpnC_IkaTfzxjokwUCnac&callback=initMap" type="text/javascript">  </script>
 <script>
   $(document).ready(function () {
     $('.slider').slider();
     $('.carousel').carousel();
+    
   });
+  function initMap() {
+  
+    var coordString = "{{userInfo.coordinates}}";
+    var index = coordString.indexOf(",");
+    var latitude = parseFloat(coordString.substr(0,index));
+    var longitude = parseFloat(coordString.substr(index+1));
+    var coordi = {lat: latitude, lng: longitude}
+    console.log(latitude+" long "+ longitude);
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+      document.getElementById('map-display'), { zoom: 16, center: coordi });
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({ position: coordi, map: map });
+
+  }
 </script>
+
+

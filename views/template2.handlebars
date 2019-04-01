@@ -37,6 +37,7 @@
 
           <nav id="header">
               <div class="nav-wrapper grey">
+                  <img class="responsive-img" src={{userInfo.logo}} alt="" id="logoImg">
 
                   <img class="responsive-img" src={{userInfo.logo}} alt="" id="logoImg">
     
@@ -57,21 +58,15 @@
 
     <div class="grey" id="thirdSection">
       <div class="row" id="pictureRow">
-
-      <div class="col s4">
-          <img class="materialboxed" width="300" src="{{userInfo.pictures}}">
-      </div>
-      <div class="col s4">
-          <img class="materialboxed" width="300" src="https://s3-media4.fl.yelpcdn.com/bphoto/2FT4IMF12cN81sNNGYxnOw/o.jpg">
-      </div>
-      <div class="col s4">
-        <img class="materialboxed" width="300" src="{{userInfo.pictures}}">
-      </div>
-
-         
-           
-            
-             
+            <div class="col s4">
+                <img class="materialboxed" width="300" src="{{userInfo.pictures}}">
+            </div>
+            <div class="col s4">
+                <img class="materialboxed" width="300" src="https://s3-media4.fl.yelpcdn.com/bphoto/2FT4IMF12cN81sNNGYxnOw/o.jpg">
+            </div>
+             <div class="col s4">
+                <img class="materialboxed" width="300" src="{{userInfo.pictures}}">
+            </div>
 
       </div>
       <div class="row center" id="textRow">
@@ -94,9 +89,7 @@
             <div class="card lime darken-1">
               <div class="card-content">
                 <p class="card-title">Store Hours</p>                    
-
                 <p>{{userInfo.schedule}}</p>                    
-
               </div>
             </div> 
         </div>
@@ -111,5 +104,7 @@
 <script>
 $(document).ready(function(){
 $(".dropdown-trigger").dropdown();
+
+
 });
 </script>

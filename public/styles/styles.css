@@ -81,6 +81,11 @@
   margin-left: 130px;
 }
 
+#map-display {
+  height: 400px;
+  width: 100%;  
+}
+
 
 
 
