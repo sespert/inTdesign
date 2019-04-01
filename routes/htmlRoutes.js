@@ -45,6 +45,7 @@ module.exports = function(app) {
   });
   app.get("/template2/:id", function(req, res) {
     db.users.findOne({ where: { id: req.params.id } }).then(function(userInfo) {
+
       var coordArr=userInfo.dataValues.coordinates.split(",");
       var schedArr=userInfo.dataValues.schedule.split(",");
       var pictArr=userInfo.dataValues.pictures.split(",");
@@ -54,7 +55,7 @@ module.exports = function(app) {
       userInfo.dataValues.pictures1 = pictArr[0];
       userInfo.dataValues.pictures2 = pictArr[1];
       userInfo.dataValues.pictures3 = pictArr[2];
-      // console.log("What's this? =============================",userInfo.dataValues);
+
       res.render("template2", {userInfo: userInfo});
     });
   });
