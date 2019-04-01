@@ -64,7 +64,7 @@
 
     <div class="grey" id="thirdSection">
       <div class="row" id="pictureRow">
-            <div class="col s4">
+            {{!-- <div class="col s4">
                 <img class="materialboxed" width="300" src="{{userInfo.pictures1}}">
             </div>
             <div class="col s4">
@@ -72,7 +72,10 @@
             </div>
              <div class="col s4">
                 <img class="materialboxed" width="300" src="{{userInfo.pictures3}}">
-            </div>
+            </div> --}}
+        <div class="carousel carousel-slider" id="template-slider">
+        
+        </div>
 
       </div>
       <div class="row center" id="textRow">
@@ -111,6 +114,11 @@
 <script>
   $(document).ready(function(){
     $(".dropdown-trigger").dropdown();
+    fillSlider();
+    $('.carousel.carousel-slider').carousel({
+      
+    });
+    autoplay();
 
   });
   function initMap() {  
@@ -125,5 +133,23 @@
       document.getElementById('map-display'), { zoom: 16, center: coordi });
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({ position: coordi, map: map });
+  }
+  function fillSlider() {
+    var pictString = "{{userInfo.pictures}}";
+    var picArray = pictString.split(",");
+    console.log(picArray);
+    for (var i = 0; i < picArray.length; i++){
+      var aVar = $("<a class='carousel-item'>");
+      aVar.attr("href", "#"+i);
+      var imgVar = $("<img class ='carousel-img'>");
+      imgVar.attr("src", picArray[i]);
+      aVar.append(imgVar);
+      $("#template-slider").append(aVar);
+    }
+  }
+
+  function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 3000);
   }
 </script>
