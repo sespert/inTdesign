@@ -3,7 +3,6 @@
   margin-right: 0%;
 }
 
-
 /* Styling for template1.handlebars */
 
 .templ1-class #logoImg {
@@ -14,29 +13,38 @@
 }
 
 .templ1-class #header {
-  height: 150px;
+  height: 100px;
 }
 
 .templ1-class #nav-mobile {
   display: block;
 }
 
-.templ1-class #firstSection, .templ1-class #secondSection, .templ1-class #thirdSection, .templ1-class #fourthSection{
-  height: 500px;
+.templ1-class #firstSection, .templ1-class #thirdSection {
+  height: 400px;
 }
 
 .templ1-class #firstSection h2, .templ1-class .collection {
   margin-top: 0;
   padding-top: 8%;
 }
-
-#firstSection p {
+.templ1-class #secondSection {
+  height: 500px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.templ1-class #firstSection p {
   font-size: 25px;
 }
-
-.secondary-content {
+.templ1-class .secondary-content {
   color: black;
 }
+.templ1-class #fourthSection {
+  height: 450px;
+}
+/* .templ1-class #scheduleDiv {
+  width: 40px;
+} */
 
 /* .card-image {
   width: 350px;

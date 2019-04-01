@@ -1,7 +1,6 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-var helpers = require('handlebars-helpers')();
 
 var db = require("./models");
 
@@ -11,7 +10,7 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
 
 // Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main"}));
