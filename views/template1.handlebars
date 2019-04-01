@@ -50,23 +50,11 @@
           
             </div>
 
-    <div class="slider" id="secondSection">
-        <ul class="slides">
-          <li>
-            <img src={{userInfo.pictures}}>
-            <div class="caption center-align">
-              <!-- <h3>This is our big Tagline!</h3> -->
-              <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-            </div>
-        </li>
-          <li>
-            <img src={{userInfo.pictures}}> 
-          </li>
-          <li>
-              <img src={{userInfo.pictures}}> 
-          </li>
-        </ul>
-    </div>   
+    <div class="carousel">
+      
+    <a class="carousel-item" href="#one!"><img src="{{itemAt userInfo.pictures 1}}"></a>
+      
+  </div> 
 
     <div class="light-blue lighten-5" id="thirdSection">
         <div class="container">
@@ -98,9 +86,9 @@
                         <div class="card-content white-text center">
                           <span class="card-title">Hours of Operation</span>
                           <ul>
-                              {{#each userInfo}}
-                            <li>{{this.schedule}}</li>
-                              {{/each}}
+                         
+                            <li>{{userInfo.schedule}}</li>
+                           
                           </ul>
                         </div>
                     </div>
