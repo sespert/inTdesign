@@ -32,13 +32,19 @@
               </div>
           </ul>
           <ul id="dropdown2" class="dropdown-content">
-            <li>{{userInfo.address}}</li>
+            <div class="card">
+              <div class="card-image">
+                <div id="map-display">
+            
+                </div>
+                <span class="card-title black">Location</span>
+                <li>{{userInfo.address}}</li>
+              </div>
+            </div>
           </ul>
 
           <nav id="header">
               <div class="nav-wrapper grey">
-                  <img class="responsive-img" src={{userInfo.logo}} alt="" id="logoImg">
-
                   <img class="responsive-img" src={{userInfo.logo}} alt="" id="logoImg">
     
                   <ul class="right hide-on-med-and-down">
@@ -59,13 +65,13 @@
     <div class="grey" id="thirdSection">
       <div class="row" id="pictureRow">
             <div class="col s4">
-                <img class="materialboxed" width="300" src="{{userInfo.pictures}}">
+                <img class="materialboxed" width="300" src="{{userInfo.pictures1}}">
             </div>
             <div class="col s4">
                 <img class="materialboxed" width="300" src="https://s3-media4.fl.yelpcdn.com/bphoto/2FT4IMF12cN81sNNGYxnOw/o.jpg">
             </div>
              <div class="col s4">
-                <img class="materialboxed" width="300" src="{{userInfo.pictures}}">
+                <img class="materialboxed" width="300" src="{{userInfo.pictures3}}">
             </div>
 
       </div>
@@ -101,10 +107,23 @@
   
 </div>
 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEksOUoC96zDNpnC_IkaTfzxjokwUCnac&callback=initMap" type="text/javascript">  </script>
 <script>
-$(document).ready(function(){
-$(".dropdown-trigger").dropdown();
+  $(document).ready(function(){
+    $(".dropdown-trigger").dropdown();
 
-
-});
+  });
+  function initMap() {  
+    var coordString = "{{userInfo.coordinates}}";
+    var index = coordString.indexOf(",");
+    var latitude = parseFloat(coordString.substr(0,index));
+    var longitude = parseFloat(coordString.substr(index+1));
+    var coordi = {lat: latitude, lng: longitude}
+    console.log(latitude+" long "+ longitude);
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+      document.getElementById('map-display'), { zoom: 16, center: coordi });
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({ position: coordi, map: map });
+  }
 </script>
