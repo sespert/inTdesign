@@ -54,7 +54,6 @@ module.exports = function(app) {
       userInfo.dataValues.pictures1 = pictArr[0];
       userInfo.dataValues.pictures2 = pictArr[1];
       userInfo.dataValues.pictures3 = pictArr[2];
-      // console.log("What's this? =============================",userInfo.dataValues);
       res.render("template2", {userInfo: userInfo});
     });
   });
