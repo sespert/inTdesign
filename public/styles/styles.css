@@ -142,7 +142,7 @@
   padding-top: 20px;
   padding-right: 80px;
 }
-.templ3-class #fourthSection, .templ3-class #fifthSection {
+.templ3-class #fourthSection, .templ3-class #fifthSection, .templ3-class #sixthSection {
   background-color:#e8f5e9;
 }
 .templ3-class #fourthSection  .logo2Img, .templ3-class #fifthSection .logo2Img {
@@ -166,4 +166,10 @@
   border: 0;
   border-top: 5px solid #827717;
   margin-left: 7%;
+}
+.templ3-class #sixthSection {
+  text-align: center;
+  font-size: 25px;
+  color: grey;
+  margin-bottom: 0px;
 }

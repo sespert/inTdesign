@@ -55,11 +55,12 @@
                         <div class="card-content">
                             <span class="card-title">Store Hours</span>
                             <div id="sched-content">
+                                {{userInfo.schedule}}
                                 {{!-- Store hours goes here, filled with script below --}}
                             </div>
                         </div>
                         <div class="card-content" id="map-display">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -67,72 +68,116 @@
         </div>
     </div>
 
+    <footer class="page-footer" id="sixthSection">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12" id="phoneNumber">
+                    {{!-- <h5 class="">Phone</h5> --}}
+                </div>
+                <div class="col l6 s12">
+                    <h5 class="">Drop us a line at {{userInfo.email}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright green lighten-5">
+            <div class="container grey-text">
+                © 2019 Copyright
+            </div>
+        </div>
+    </footer>
+
+    {{!-- <div class="footer-copyright" id="sixthSection">
+        <ul id="bottomList" class=""> --}}
+            {{!-- <li>{{userInfo.phone}}</li> --}}
+            {{!-- <li>Drop us a line at {{userInfo.email}}</li>
+        </ul>
+    </div> --}}
+
 </div>
 
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEksOUoC96zDNpnC_IkaTfzxjokwUCnac&callback=initMap"
-  type="text/javascript">  </script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEksOUoC96zDNpnC_IkaTfzxjokwUCnac&callback=initMap"
+    type="text/javascript">  </script>
 <script>
     $(document).ready(function () {
         fillSlider();
         $('.slider').slider();
         pictureMenu();
         pictureCard();
+        //fillSchedule();
+        fillPhone();
+
+
 
     });
-    
-        function initMap() {
 
-            // var coordString = "{{userInfo.coordinates}}";
-            var coordString = "25.7269702206122,-80.2405763730163";
-            var index = coordString.indexOf(",");
-            var latitude = parseFloat(coordString.substr(0, index));
-            var longitude = parseFloat(coordString.substr(index + 1));
-            var coordi = { lat: latitude, lng: longitude }
-            var map = new google.maps.Map(
-                document.getElementById('map-display'), { zoom: 16, center: coordi });
-            var marker = new google.maps.Marker({ position: coordi, map: map });
-        };
+    function initMap() {
 
-        function fillSlider() {
-            var pictString = "{{userInfo.pictures}}";
-            var picArray = pictString.split(",");
-            console.log(picArray);
-            for (var i = 0; i < picArray.length; i++) {
-                var listVar = $("<li>");
-                var imgVar = $("<img>");
-                imgVar.attr("src", picArray[i]);
-                listVar.append(imgVar);
-                $(".slides").append(listVar);
-            }
-        };
+        var coordString = "{{userInfo.coordinates}}";
+        var index = coordString.indexOf(",");
+        var latitude = parseFloat(coordString.substr(0, index));
+        var longitude = parseFloat(coordString.substr(index + 1));
+        var coordi = { lat: latitude, lng: longitude }
+        var map = new google.maps.Map(
+            document.getElementById('map-display'), { zoom: 16, center: coordi });
+        var marker = new google.maps.Marker({ position: coordi, map: map });
+    };
 
-        function pictureMenu() {
-            var pictString = "{{userInfo.pictures}}";
-            var picArray = pictString.split(",");
-            console.log(picArray);
+    function fillSlider() {
+        var pictString = "{{userInfo.pictures}}";
+        var picArray = pictString.split(",");
+        console.log(picArray);
+        for (var i = 0; i < picArray.length; i++) {
+            var listVar = $("<li>");
             var imgVar = $("<img>");
-            imgVar.attr("src", picArray[1]);
-            $("#pictureMenu").append(imgVar);
+            imgVar.attr("src", picArray[i]);
+            listVar.append(imgVar);
+            $(".slides").append(listVar);
         }
+    };
 
-        function pictureCard() {
-            var pictString = "{{userInfo.pictures}}";
-            var picArray = pictString.split(",");
-            console.log(picArray);
-            var imgVar = $("<img>");
-            imgVar.attr("src", picArray[2]);
-            $("#pictureCard").append(imgVar);
+    function pictureMenu() {
+        var pictString = "{{userInfo.pictures}}";
+        var picArray = pictString.split(",");
+        console.log(picArray);
+        var imgVar = $("<img>");
+        imgVar.attr("src", picArray[1]);
+        $("#pictureMenu").append(imgVar);
+    }
+
+    function pictureCard() {
+        var pictString = "{{userInfo.pictures}}";
+        var picArray = pictString.split(",");
+        console.log(picArray);
+        var imgVar = $("<img>");
+        imgVar.attr("src", picArray[2]);
+        $("#pictureCard").append(imgVar);
+    }
+    function fillPhone() {
+        var phone = formatPhoneNumber("{{userInfo.phone}}");
+        console.log(phone);
+        var newH = $('<h5>').text('Call us at ' + phone);
+        $('#phoneNumber').append(newH);
+    }
+
+    function formatPhoneNumber(str) {
+        var cleaned = ('' + str).replace(/\D/g, '')
+        var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
+        if (match) {
+            var intlCode = (match[1] ? '+1 ' : '')
+            return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('')
         }
-        function fillSchedule() {
-            var scheString = "{{userInfo.schedule}}";
-            var scheArr = scheString.split(",");
-            console.log(scheArr);
-            for (var i = 0; i < scheArr.length; i++) {
-                var pVar = $("<p>");
-                pVar.text(scheArr[i]);
-                $("#sched-content").append(pVar);
-            }
-        }
-   
+        return null
+    }
+        /*function fillSchedule() {
+var scheString = "{{userInfo.schedule}}";
+var scheArr = scheString.split(",");
+console.log(scheArr);
+for (var i = 0; i < scheArr.length; i++) {
+    var pVar = $("<p>");
+    pVar.text(scheArr[i]);
+    $("#sched-content").append(pVar);
+}
+}*/
+
 </script>

@@ -4,7 +4,6 @@
     <header>
       <!-- Navbar dropdwn structure -->
       <ul id="dropdown1" class="dropdown-content">
-        <li>{{userInfo.phone}}</li>
         <li>{{userInfo.email}}</li>
         <li class="divider"></li>
         <!-- Social Media Icons  -->
@@ -109,6 +108,7 @@
     $(".dropdown-trigger").dropdown();
     fillSlider();
     fillSchedule();
+    fillPhone();
 
   });
   function initMap() {
@@ -146,5 +146,22 @@
       pVar.text(scheArr[i]);
       $("#sched-content").append(pVar);
     }
+  }
+
+  function fillPhone() {
+    var phone = formatPhoneNumber("{{userInfo.phone}}");
+    console.log(phone);
+    var newUL = $('<li>').text(phone);
+    $('#dropdown1').prepend(newUL);
+  }
+
+  function formatPhoneNumber(str) {
+    var cleaned = ('' + str).replace(/\D/g, '')
+    var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
+    if (match) {
+      var intlCode = (match[1] ? '+1 ' : '')
+      return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('')
+    }
+    return null
   }
 </script>
