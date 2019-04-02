@@ -4,7 +4,6 @@
 }
 
 /* Styling for template1.handlebars */
-
 .templ1-class #logoImg {
   width: 10%;
   position: absolute;
@@ -14,11 +13,15 @@
 }
 
 .templ1-class #header {
-  height: 100px;
+  height: 150px;
 }
 
 .templ1-class #nav-mobile {
   display: block;
+}
+.templ1-class #nav-mobile a {
+  padding-bottom: 1px;
+  padding-top: 1px;
 }
 
 .templ1-class #firstSection, .templ1-class #thirdSection {
@@ -30,7 +33,6 @@
   padding-top: 8%;
 }
 .templ1-class #template-slider {
-  /* height: 1000px; */
   margin-left: 50px;
   margin-top: 20px;
 }
@@ -44,10 +46,34 @@
   height: 350px;
   width: auto;
 }
+.templ1-class #thirdSection {
+  height: auto;
+  text-align: center;
+}
+.templ1-class #thirdSection .collection{
+  border-style: hidden;
+  padding-top: 20px;
+}
+.templ1-class #thirdSection .collection-header {
+    background-color: #e1f5fe;
+}
 .templ1-class #fourthSection {
   height: 450px;
 }
-
+.templ1-class #fourthSection #scheduleDiv .card-title{
+  margin-top: 40px;
+}
+.templ1-class hr {
+  display: block;
+  height: 1px;
+  width: 60%;
+  border: 0;
+  border-top: 2px solid white;
+  margin-top: 20px;
+}
+.templ1-class #fourthSection #sched-content{
+  margin-top: 20px;
+}
 
 /* Styling for template2.handlebars */
 
