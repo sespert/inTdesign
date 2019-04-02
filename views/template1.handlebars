@@ -7,7 +7,6 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <!-- Business address phone and email -->
           <li><a href="">{{userInfo.address}}</a></li>
-          <br>
           <li><a href="">{{userInfo.email}}</a></li>
         </ul>
     </nav>
@@ -169,7 +168,7 @@
     var phone = formatPhoneNumber("{{userInfo.phone}}");
     console.log(phone);
     var newUL = $('<li><a href="">').text(phone);
-    $('#nav-mobile').append(newUL);
+    $('#nav-mobile').prepend(newUL);
   }
 
   function formatPhoneNumber(str) {
