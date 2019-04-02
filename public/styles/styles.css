@@ -63,6 +63,9 @@
 .templ1-class #fourthSection #scheduleDiv .card-title{
   margin-top: 40px;
 }
+.templ1-class #fourthSection  #map-display {
+  margin-top: 10px;
+}
 .templ1-class hr {
   display: block;
   height: 1px;
