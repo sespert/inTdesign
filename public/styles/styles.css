@@ -89,9 +89,55 @@
   margin: auto;
 }
 
+/* Styling for template3.handlebars */
 
-
-
-            
-
-
+.templ3-class body {
+  margin-top: 0;
+  background-color: #fcf8f8ef;
+  color: #656965;
+}
+.templ3-class nav {
+  height: 100px;
+}
+.templ3-class nav .brand-logo {
+  padding-top: 15px;
+}
+.templ3-class nav #logoImg {
+  width: 200px;
+  position: absolute;
+  right: 10px;
+}
+.templ3-class #secondSection {
+  z-index: -1;
+  position: relative;
+}
+.templ3-class #thirdSection #nav-mobile a {
+  font-size: 30px;
+  padding-top: 20px;
+  padding-right: 80px;
+}
+.templ3-class #fourthSection, .templ3-class #fifthSection {
+  background-color:#e8f5e9;
+}
+.templ3-class #fourthSection  .logo2Img, .templ3-class #fifthSection .logo2Img {
+  width: 100px;
+  position: absolute;
+  right: 50px;
+  margin-top: 50px;
+}
+.templ3-class #fourthSection h5, .templ3-class #fifthSection h5 {
+  padding-left: 140px;
+  padding-top: 70px;
+}
+.templ3-class #fourthSection img {
+  width: 80%;
+  height: auto;
+}
+.templ3-class hr {
+  display: block;
+  height: 1px;
+  width: 30%;
+  border: 0;
+  border-top: 5px solid #827717;
+  margin-left: 7%;
+}
