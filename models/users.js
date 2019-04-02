@@ -7,7 +7,10 @@ module.exports = function(sequelize, DataTypes) {
       yelpId: DataTypes.STRING,
       address: DataTypes.STRING,
       phone: DataTypes.STRING,
-      email: DataTypes.STRING,
+      email: {
+        type: DataTypes.STRING,
+        defaultValue: "business.info@email.com"
+      },
       logo: {
         type: DataTypes.STRING,
         defaultValue: "https://baseload.com/wp-content/uploads/2018/07/logo-placeholder@2x.png"
@@ -16,7 +19,10 @@ module.exports = function(sequelize, DataTypes) {
       rating: DataTypes.STRING,
       pictures: DataTypes.STRING,
       schedule: DataTypes.STRING,
-      services: DataTypes.STRING,
+      services: {
+        type: DataTypes. STRING,
+        defaultValue: "../assets/images/menuDefault.png"
+      },
       aboutUs: DataTypes.TEXT,
       businessType: {
         allowNull: false,
