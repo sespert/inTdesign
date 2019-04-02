@@ -1,124 +1,122 @@
 <div class="templ2-class">
 
-    <div id="firstSection">
-      <header>
-          <!-- Navbar dropdwn structure -->
-          <ul id="dropdown1" class="dropdown-content">
-            <li>{{userInfo.phone}}</li>
-            <li>{{userInfo.email}}</li>
-            <li class="divider"></li>
-            <!-- Social Media Icons  -->
-            <div id="socialIcons">
-                <a href="https://www.facebook.com/rootnbonenyc" target="_blank">
-                  <span style="font-size: 4em; color: #cddc39;">
-                  <i class="fab fa-facebook-square"></i>
-                </span>
-                </a>
-                <a href="https://www.facebook.com/rootnbonenyc" target="_blank">
-                  <span style="font-size: 4em; color: #cddc39;">
-                  <i class="fab fa-instagram"></i>
-                </span>
-                </a>
-                <a href="https://www.facebook.com/rootnbonenyc" target="_blank">
-                  <span style="font-size: 4em; color: #cddc39;">
-                      <i class="fab fa-twitter-square"></i>
-                </span>
-                </a>
-                <a href="https://www.facebook.com/rootnbonenyc" target="_blank">
-                  <span style="font-size: 4em; color: #cddc39;">
-                      <i class="fab fa-yelp"></i>
-                </span>
-                </a>
-              </div>
-          </ul>
-          <ul id="dropdown2" class="dropdown-content">
-            <div class="card">
-              <div class="card-image">
-                <div id="map-display">
-            
-                </div>
-                <span class="card-title black">Location</span>
-                <li>{{userInfo.address}}</li>
-              </div>
+  <div id="firstSection">
+    <header>
+      <!-- Navbar dropdwn structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li>{{userInfo.phone}}</li>
+        <li>{{userInfo.email}}</li>
+        <li class="divider"></li>
+        <!-- Social Media Icons  -->
+        <div id="socialIcons">
+          <a href="https://www.facebook.com/rootnbonenyc" target="_blank">
+            <span style="font-size: 4em; color: #cddc39;">
+              <i class="fab fa-facebook-square"></i>
+            </span>
+          </a>
+          <a href="https://www.facebook.com/rootnbonenyc" target="_blank">
+            <span style="font-size: 4em; color: #cddc39;">
+              <i class="fab fa-instagram"></i>
+            </span>
+          </a>
+          <a href="https://www.facebook.com/rootnbonenyc" target="_blank">
+            <span style="font-size: 4em; color: #cddc39;">
+              <i class="fab fa-twitter-square"></i>
+            </span>
+          </a>
+          <a href="https://www.facebook.com/rootnbonenyc" target="_blank">
+            <span style="font-size: 4em; color: #cddc39;">
+              <i class="fab fa-yelp"></i>
+            </span>
+          </a>
+        </div>
+      </ul>
+      <ul id="dropdown2" class="dropdown-content">
+        <div class="card">
+          <div class="card-image">
+            <div id="map-display">
+
             </div>
+            <span class="card-title black">Location</span>
+            <li>{{userInfo.address}}</li>
+          </div>
+        </div>
+      </ul>
+
+      <nav id="header">
+        <div class="nav-wrapper grey">
+          <img class="responsive-img" src="{{userInfo.logo}}" alt="" id="logoImg">
+
+          <ul class="right hide-on-med-and-down">
+            <!-- Business address phone and email -->
+            <li><a class="dropdown-trigger grey-text lime" href="#!" data-target="dropdown1">Contact Us</a></li>
+            <li><a class="dropdown-trigger grey-text lime" href="#!" data-target="dropdown2">Location</a></li>
           </ul>
-
-          <nav id="header">
-              <div class="nav-wrapper grey">
-                  <img class="responsive-img" src={{userInfo.logo}} alt="" id="logoImg">
-    
-                  <ul class="right hide-on-med-and-down">
-                    <!-- Business address phone and email -->
-                    <li><a class="dropdown-trigger grey-text lime" href="#!" data-target="dropdown1">Contact Us</a></li>
-                    <li><a class="dropdown-trigger grey-text lime" href="#!" data-target="dropdown2">Location</a></li>
-                  </ul>
-              </div>
-          </nav>
-      </header>
-    </div>
-
-    <div id="secondSection" class="center">
-        <h3>{{userInfo.userName}}</h3>
-        {{!-- <h5 class="orange-text">HONEST SOUTHERN FOOD</h5> --}}
-    </div>
-
-    <div class="grey" id="thirdSection">
-      <div class="row" id="pictureRow">
-        
-      </div>
-      <div class="row center" id="textRow">
-        <div class="col s3 ">            
-            <div class="card lime darken-1">
-              <div class="card-content">
-                <p>About Us</p>
-                <p>{{userInfo.aboutUs}}</p>
-              </div>
-            </div>        
         </div>
-        <div class="col s3 offset-s1">
-            <div class="card lime darken-1">
-              <div class="card-content">
-                <p class="card-title">Menu</p>                             
-              </div>
-            </div> 
-        </div>
-        <div class="col s3 offset-s1">
-            <div class="card lime darken-1">
-              <div class="card-content">
-                <p class="card-title">Store Hours</p>                    
-                <div id="sched-content">
+      </nav>
+    </header>
+  </div>
 
-                </div>
-              </div>
-            </div> 
+  <div id="secondSection" class="center">
+    <h3>{{userInfo.userName}}</h3>
+
+  </div>
+
+  <div class="grey" id="thirdSection">
+    <div class="row" id="pictureRow">
+
+    </div>
+    <div class="row center" id="textRow">
+      <div class="col s3 ">
+        <div class="card lime darken-1">
+          <div class="card-content">
+            {{!-- Here goes the slogan, this would be the default --}}
+            <p class="card-title">HONEST SOUTHERN FOOD</p>
+          </div>
         </div>
       </div>
-
+      <div class="col s3 offset-s1">
+        <div class="card lime darken-1">
+          <div class="card-content">
+            <p class="card-title">Menu</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s3 offset-s1">
+        <div class="card lime darken-1">
+          <div class="card-content">
+            <p class="card-title">Store Hours</p>
+            <div id="sched-content">
+              {{!-- Store hours goes here, filled with script below --}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
-  
+
 </div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEksOUoC96zDNpnC_IkaTfzxjokwUCnac&callback=initMap" type="text/javascript">  </script>
+</div>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEksOUoC96zDNpnC_IkaTfzxjokwUCnac&callback=initMap"
+  type="text/javascript">  </script>
 <script>
-  $(document).ready(function(){
+  $(document).ready(function () {
     $(".dropdown-trigger").dropdown();
     fillSlider();
-    $('.carousel.carousel-slider').carousel({
-      
-    });
-    autoplay();
     fillSchedule();
 
   });
-  function initMap() {  
+  function initMap() {
     var coordString = "{{userInfo.coordinates}}";
     var index = coordString.indexOf(",");
-    var latitude = parseFloat(coordString.substr(0,index));
-    var longitude = parseFloat(coordString.substr(index+1));
-    var coordi = {lat: latitude, lng: longitude}
-    console.log(latitude+" long "+ longitude);
+    var latitude = parseFloat(coordString.substr(0, index));
+    var longitude = parseFloat(coordString.substr(index + 1));
+    var coordi = { lat: latitude, lng: longitude }
+    console.log(latitude + " long " + longitude);
     // The map, centered at Uluru
     var map = new google.maps.Map(
       document.getElementById('map-display'), { zoom: 16, center: coordi });
@@ -129,19 +127,13 @@
     var pictString = "{{userInfo.pictures}}";
     var picArray = pictString.split(",");
     console.log(picArray);
-    for (var i = 0; i < picArray.length; i++){
+    for (var i = 0; i < picArray.length; i++) {
       var divVar = $("<div class='col s4 template2-img'>");
       var imgVar = $("<img class ='materialboxed' width='400' height='400'>");
       imgVar.attr("src", picArray[i]);
       divVar.append(imgVar);
       $("#pictureRow").append(divVar);
     }
-  }
-
-
-  function autoplay() {
-    $('.carousel').carousel('next');
-    setTimeout(autoplay, 3000);
   }
 
   function fillSchedule() {
