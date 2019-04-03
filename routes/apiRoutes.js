@@ -63,43 +63,47 @@ module.exports = function (app) {
         
         var coord = [newBusiness.coordinates.latitude, newBusiness.coordinates.longitude];
         var hours = [];
-        var hoursArr =newBusiness.hours[0].open;
-        console.log("--------------------------------------------------",hoursArr);
+        var hoursArr = "No hours provided";
+        if (newBusiness.hours){
+            hoursArr = newBusiness.hours[0].open;
+               
+            console.log("--------------------------------------------------",hoursArr);
 
-        for (var i = 0; i < hoursArr.length; i++){
-            var day=[];
-            console.log("hours array",hoursArr[i].day);
-            switch(hoursArr[i].day) {
-                case "0":
-                    day = "Mon: " + hoursArr[i].start + " to " + hoursArr[i].end;
-                    hours.push(day);
-                    console.log("monday");
+            for (var i = 0; i < hoursArr.length; i++){
+                var day=[];
+                console.log("hours array",hoursArr[i].day);
+                switch(hoursArr[i].day) {
+                    case "0":
+                        day = "Mon: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                        hours.push(day);
+                        console.log("monday");
+                        break;
+                    case "1":
+                        day = "Tue: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                        hours.push(day);
                     break;
-                case "1":
-                    day = "Tue: " + hoursArr[i].start + " to " + hoursArr[i].end;
-                    hours.push(day);
-                break;
-                case "2":
-                    day = "Wed: " + hoursArr[i].start + " to " + hoursArr[i].end;
-                    hours.push(day);
-                    break;
-                case "3":
-                    day = "Thu: " + hoursArr[i].start + " to " + hoursArr[i].end;
-                    hours.push(day);
-                    break;
-                case "4":
-                    day = "Fri: " + hoursArr[i].start + " to " + hoursArr[i].end;
-                    hours.push(day);
-                    break;
-                case "5":
-                    day = "Sat: " + hoursArr[i].start + " to " + hoursArr[i].end;
-                    hours.push(day);
-                    break;
-                case "6":
-                    day = "Sun: " + hoursArr[i].start + " to " + hoursArr[i].end;
-                    hours.push(day);
-                    break;
-            }
+                    case "2":
+                        day = "Wed: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                        hours.push(day);
+                        break;
+                    case "3":
+                        day = "Thu: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                        hours.push(day);
+                        break;
+                    case "4":
+                        day = "Fri: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                        hours.push(day);
+                        break;
+                    case "5":
+                        day = "Sat: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                        hours.push(day);
+                        break;
+                    case "6":
+                        day = "Sun: " + hoursArr[i].start + " to " + hoursArr[i].end;
+                        hours.push(day);
+                        break;
+                }
+            };
         };
         console.log(hours);
         
