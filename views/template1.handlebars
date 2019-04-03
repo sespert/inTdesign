@@ -2,8 +2,6 @@
   <header>
     <nav id="header">
       <div class="nav-wrapper black">
-        <img class="responsive-img" src="{{userInfo.logo}}" alt="" id="logoImg">
-
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <!-- Business address phone and email -->
           <li><a href="">{{userInfo.address}}</a></li>
@@ -14,33 +12,13 @@
 
   <main>
 
-    <div class="light-blue lighten-5" id="firstSection">
-      <div class="container">
-        <div class="row">
-          <div class="col s10">
+    <div class="card-panel light-blue lighten-5" id="firstSection">
+      <div class="container center">
+                <img class="responsive-img" src="{{userInfo.logo}}" alt="" id="logoImg">
+
             <h2>{{userInfo.userName}}</h2>
             {{!-- Here goes the slogan, this would be the default --}}
             <p>HONEST SOUTHERN FOOD</p>
-          </div>
-          <div class="col s1 offset-s1">
-            <!-- Social Media Icons  -->
-            <span style="font-size: 4em; color: #ffeb3b;">
-              <i class="fab fa-facebook-square"></i>
-            </span>
-            <br>
-            <span style="font-size: 4em; color: #ffeb3b;">
-              <i class="fab fa-instagram"></i>
-            </span>
-            <br>
-            <span style="font-size: 4em; color: #ffeb3b;">
-              <i class="fab fa-twitter-square"></i>
-            </span>
-            <br>
-            <span style="font-size: 4em; color: #ffeb3b;">
-              <i class="fab fa-yelp"></i>
-            </span>
-          </div>
-        </div>
       </div>
     </div>
     <div id="secondSection">
@@ -49,13 +27,13 @@
       </div>
     </div>
 
-    <div class="light-blue lighten-5" id="thirdSection">
+    <div class="card-panel light-blue lighten-5" id="thirdSection">
       <div class="container">
         <ul class="collection with-header">
           <li class="collection-header">
             <h4>Menu</h4>
            
-          </li>
+          </li><br>
           <img class="responsive-img" src="{{userInfo.services}}" width="600" alt="">
 
           {{!-- {{#each menu}}
@@ -71,20 +49,33 @@
     <div class="container" id="fourthSection">
       <div class="row">
 
-        <div class="col s6 m6">
+        <div class="col s5 m5">
             <div id="map-display">
 
             </div>
         </div>
 
-        <div class="col s6 m6" id="scheduleDiv">
+        <div class="col s4 offset-s2 m4 offset-m2 card-panel" id="scheduleDiv">
           <div class="card medium black darken-1">
             <div class="card-content white-text center">
-              <span class="card-title">Hours of Operation</span>
+              <span class="card-title" id="schedTitle">Hours of Operation</span>
               <hr />
               <div id="sched-content">
                 {{!-- Store hours goes here, filled with script below --}}
-              </div>
+              </div><br>
+              <!-- Social Media Icons  -->
+            <span style="font-size: 2em; color: #ffeb3b;">
+              <i class="fab fa-facebook-square"></i>
+            </span>
+            <span style="font-size: 2em; color: #ffeb3b;">
+              <i class="fab fa-instagram"></i>
+            </span>
+            <span style="font-size: 2em; color: #ffeb3b;">
+              <i class="fab fa-twitter-square"></i>
+            </span>
+            <span style="font-size: 2em; color: #ffeb3b;">
+              <i class="fab fa-yelp"></i>
+            </span>
             </div>
           </div>
         </div>
