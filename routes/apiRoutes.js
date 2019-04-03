@@ -51,36 +51,6 @@ module.exports = function (app) {
             if (error) throw new Error(error);
             res.send(data);
            
-
-
-            // var dataObject = JSON.parse(data);
-            // // console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",dataObject);
-            // var request = require("request");
-
-            // var options = {
-            //     method: 'POST',
-            //     url: 'http://localhost:3000/api/addBusiness',
-            //     headers:
-            //     {
-            //         'Postman-Token': '5fc7f30d-3b0c-4e09-bd84-a3dfc140903f',
-            //         'cache-control': 'no-cache',
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: dataObject,
-                
-            //     json: true
-            // };
-
-            // request(options, function (error, response, body) {
-                
-            //     if (error) throw new Error(error);
-
-            //     console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&",body);
-            // });
-
-
-
-        //     // res.json(data);
         });
 
 
