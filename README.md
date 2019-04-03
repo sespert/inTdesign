@@ -2,7 +2,7 @@
 
 ### *Build your website in just one click*
 
-![screenshot]()
+![screenshot](https://github.com/sespert/inTdesign/blob/master/public/assets/images/App.png)
 
 ## Project 3 - Full Stack Development Program University of Miami Cohort 2019
 
