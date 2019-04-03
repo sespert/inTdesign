@@ -1,40 +1,59 @@
-<div class="container text-center index-class">
+<div class="index-class">
 
-    <h1>Let us build your webpage</h1>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><img class="" id="logoImg" src="assets/images/ourLogo.png" alt=""></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="btn light-green accent-4" id="navButton"href="#!">About Us</a></li>
+      </ul>
+    </div>
+    </nav>
 
-    <h3>Choose among these templates</h3>
-
-    <div class="row">
-        <div class="col s4 m4">
-            <div class="card">
-                <div class="card-image">
-                    <img src="assets/images/template1.png">
-                    <span class="card-title">Template 1</span>
-                </div>
+    <div class="container center">
+        <div id="firstSection"> 
+            <div id="header">
+                <h4 class="green-text">Build your business in just one click</h4>
             </div>
-        </div>
-        <div class="col s4 m4">
-            <div class="card">
-                <div class="card-image">
-                    <img src="assets/images/template2.png">
-                    <span class="card-title">Template 2</span>
+        <h5>In to Design can help you to connect your business, <br>
+            just pick one design and your brand will be ready to be presented to the world</h5>
+        <br>
+            <div class="row">
+                <div class="col s3 offset-s1 m3 offset-m1">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/template1.png" id="temp1-link">
+                        </div>
+                    </div>
+                    <a class="btn grey lighten-2" href="">Template 1</a>
+                
                 </div>
-            </div>
-        </div>
-        <div class="col s4 m4">
-            <div class="card">
-                <div class="card-image">
-                    <img src="assets/images/template3.png">
-                    <span class="card-title">Template 3</span>
+                <div class="col s3 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/template2.png" id="temp2-link">
+                        </div>
+                    </div>
+                        <a class="btn grey lighten-2" href="">Template 2</a>
+
+                </div>
+                <div class="col s3 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/template3.png" id="temp3-link">
+                        </div>
+                    </div>
+                        <a class="btn grey lighten-2" href="">Template 3</a>
                 </div>
             </div>
         </div>
     </div>
+        <div id="secondSection">
+            <h5>It gets easier! ... <br>
+                If your company is on YELP just click on Yelp Users and most of the information will be ﬁlled out for you!</h5>
 
-    <div class="center">
-        <a class="waves-effect waves-light btn" id="yelpBtn">Yelp Users</a>
-        <a class="waves-effect waves-light btn" id="nonYelpBtn">Non Yelp Users</a>
-    </div>
+        <a class="waves-effect waves-light btn light-green accent-4" id="yelpBtn">Yelp Users</a>
+        <a class="waves-effect waves-light btn light-green accent-4" id="nonYelpBtn">Non Yelp Users</a>
+        </div>
 
     <div class="row" id="businessInput">
         <form class="col s12">
@@ -86,6 +105,8 @@
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
     </div>
+
+    
 
 </div>
 
@@ -160,19 +181,31 @@
 
         $(".modal").on("click", ".select-business", function (event) {
             var id = $(this).data("id");
-            console.log(id);
+            console.log("id from front end",id);
             var query = "/api/yelp/" + id;
-            console.log(query);
+            console.log("query segundo get",query);
+
             $.ajax(query, {
                 type: "GET"                    
             }).then(function(data) {
-                $('#modal1').modal('close');
-                location.reload();
+                
+                
+                var dataObject = JSON.parse(data);
+                console.log(dataObject);
+
+
+                var query2 = "/api/addBusiness";
+                $.post(query2, dataObject).then (function(moreData) {
+                     console.log("enters the specific ID");
+                    $('#modal1').modal('close');
+                    console.log("MoreData", moreData);
+                });
             });
 
         });
-
-
+        $("#temp1-link").attr("href","/template1/30");
+        $("#temp2-link").attr("href","/template2/30");
+        $("#temp3-link").attr("href","/template3/30");
 
     });
 
