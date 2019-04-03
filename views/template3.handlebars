@@ -120,6 +120,11 @@
         pictureCard();
         //fillSchedule();
         fillPhone();
+        var idToLink = "{{userInfo.id}}";
+        console.log (idToLink);
+        $("#templ1-look").attr("href","/template1/"+idToLink);
+        $("#templ2-look").attr("href","/template2/"+idToLink);
+        
     });
 
     function initMap() {

@@ -98,9 +98,9 @@
         <br>
         <h5>Click the buttons to see your info on different templates, or save your work</h5>
         <br>
-        <a class="waves-effect waves-light btn light-green accent-4" id="templ1-look">Template 1<i
-                class="far fa-eye"></i></a>
         <a class="waves-effect waves-light btn light-green accent-4" id="templ2-look">Template 2<i
+                class="far fa-eye"></i></a>
+        <a class="waves-effect waves-light btn light-green accent-4" id="templ3-look">Template 3<i
                 class="far fa-eye"></i></a>
         <a class="waves-effect waves-light btn light-green accent-4" id="save-pdf">Save as PDF<i
                 class="far fa-save"></i></a>
@@ -124,6 +124,10 @@
     autoplay();
     fillSchedule();
     fillPhone();
+    var idToLink = "{{userInfo.id}}";
+    console.log (idToLink);
+    $("#templ2-look").attr("href","/template2/"+idToLink);
+    $("#templ3-look").attr("href","/template3/"+idToLink);
 
   });
   function initMap() {
@@ -145,7 +149,7 @@
     for (var i = 0; i < picArray.length; i++) {
       var aVar = $("<a class='carousel-item'>");
       aVar.attr("href", "#" + i);
-      var imgVar = $("<img class ='carousel-img'>");
+      var imgVar = $("<img class ='carousel-img responsive-img'>");
       imgVar.attr("src", picArray[i]);
       aVar.append(imgVar);
       $("#template-slider").append(aVar);
