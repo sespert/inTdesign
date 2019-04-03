@@ -83,8 +83,7 @@
     
         function initMap() {
 
-            // var coordString = "{{userInfo.coordinates}}";
-            var coordString = "25.7269702206122,-80.2405763730163";
+            var coordString = "{{userInfo.coordinates}}";           
             var index = coordString.indexOf(",");
             var latitude = parseFloat(coordString.substr(0, index));
             var longitude = parseFloat(coordString.substr(index + 1));

@@ -8,24 +8,30 @@
         <div class="col s4 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="assets/images/template1.png">
-                    <span class="card-title">Template 1</span>
+                    <a id="temp1-link">
+                        <img src="assets/images/template1.png">
+                        <span class="card-title">Template 1</span>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col s4 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="assets/images/template2.png">
-                    <span class="card-title">Template 2</span>
+                    <a id="temp2-link">
+                        <img src="assets/images/template2.png">
+                        <span class="card-title">Template 2</span>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col s4 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="assets/images/template3.png">
-                    <span class="card-title">Template 3</span>
+                    <a id="temp3-link">
+                        <img src="assets/images/template3.png">
+                        <span class="card-title">Template 3</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -92,8 +98,7 @@
 <script>
 
     $(document).ready(function () {
-
-
+        
         $("#businessInput").hide();
         $("#businessForm").hide();
 
@@ -126,6 +131,7 @@
             console.log(newBusiness, city);
             var query = "/api/yelp/" + newBusiness + "/" + city;
             console.log(query);
+            
             $.ajax(query, {
                 type: "GET"
             }).then(function (data) {
@@ -160,19 +166,34 @@
 
         $(".modal").on("click", ".select-business", function (event) {
             var id = $(this).data("id");
-            console.log(id);
+            console.log("id from front end",id);
             var query = "/api/yelp/" + id;
-            console.log(query);
+            console.log("query segundo get",query);
+
             $.ajax(query, {
                 type: "GET"                    
             }).then(function(data) {
-                $('#modal1').modal('close');
-                location.reload();
+                
+                
+                var dataObject = JSON.parse(data);
+                console.log(dataObject);
+
+
+                var query2 = "/api/addBusiness";
+                $.post(query2, dataObject).then (function(moreData) {
+                     console.log("enters the specific ID");
+                    $('#modal1').modal('close');
+                    console.log("MoreData", moreData);
+                });
+                
+                
             });
 
         });
 
-
+        $("#temp1-link").attr("href","/template1/30");
+        $("#temp2-link").attr("href","/template2/30");
+        $("#temp3-link").attr("href","/template3/30");
 
     });
 
