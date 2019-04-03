@@ -149,6 +149,17 @@
   font-style: italic;
   font-size: 24px;
 }
+.templ1-class #seventhSection {
+  height: 180px;
+}
+.templ1-class #seventhSection i {
+  margin-left: 20px;
+}
+.templ1-class .btn {
+  height: auto;
+  width: auto;
+  padding: 5px 25px 5px 25px;
+}
 
 /* Styling for template2.handlebars */
 
@@ -177,6 +188,7 @@
 }
 .templ2-class #thirdSection {
   margin-top: 8%;
+  padding-top: 30px;
 }
 .templ2-class #pictureRow {
   margin-left: 150px;
@@ -185,23 +197,37 @@
   height: 400px;
   width: 100%;  
 }
-
 #sched-content {
   margin: auto;
 }
+.templ2-class #fourthSection {
+  height: 180px;
+}
+.templ2-class #fourthSection i {
+  margin-left: 20px;
+}
+.templ2-class #fourthSection .btn {
+  height: auto;
+  width: auto;
+  padding: 5px 25px 5px 25px;
+}
 
 /* Styling for template3.handlebars */
-
+.templ3-class {
+  font-family: 'Junge', serif;
+}
 .templ3-class body {
   margin-top: 0;
   background-color: #fcf8f8ef;
-  color: #656965;
+  color: #424242;
 }
+
 .templ3-class nav {
   height: 100px;
 }
 .templ3-class nav .brand-logo {
   padding-top: 15px;
+  color: #424242;
 }
 .templ3-class nav #logoImg {
   width: 200px;
@@ -212,13 +238,21 @@
   z-index: -1;
   position: relative;
 }
-.templ3-class #thirdSection #nav-mobile a {
+.templ3-class #thirdSection #nav-mobile .btn {
   font-size: 30px;
-  padding-top: 20px;
-  padding-right: 80px;
+  margin-top: 20px;
+  margin-right: 80px;
+  color: #424242;
+  background-color:#fff9c4;
 }
-.templ3-class #fourthSection, .templ3-class #fifthSection, .templ3-class #sixthSection {
-  background-color:#e8f5e9;
+.templ3-class #fourthSection, .templ3-class #fifthSection {
+  background-color:#ffd600;
+}
+.templ3-class #fourthSection, .templ3-class #fifthSection {
+  padding-bottom: 20px;
+}
+.templ3-class #sixthSection {
+  background-color:#fff9c4;
 }
 .templ3-class #fourthSection  .logo2Img, .templ3-class #fifthSection .logo2Img {
   width: 100px;
@@ -226,25 +260,65 @@
   right: 50px;
   margin-top: 50px;
 }
-.templ3-class #fourthSection h5, .templ3-class #fifthSection h5 {
+
+.templ3-class #fourthSection h4, .templ3-class #fifthSection h4 {
   padding-left: 140px;
-  padding-top: 70px;
+  padding-top: 40px;
 }
 .templ3-class #fourthSection img {
-  width: 80%;
+  width: 70%;
   height: auto;
 }
-.templ3-class hr {
+.templ3-class #fourthSection hr, .templ3-class #fifthSection hr {
   display: block;
-  height: 1px;
   width: 30%;
   border: 0;
-  border-top: 5px solid #827717;
+  border-top: 2px solid #827717;
   margin-left: 7%;
+}
+.templ3-class #fifthSection #pictureCard img {
+  width: 100%;
+  margin-left: 110px;
+  margin-top: 30px;
+}
+.templ3-class #fifthSection .card-panel {
+  margin-left: 50px;
+}
+.templ3-class #fifthSection #storeHours {
+  text-align: center;
+}
+.templ3-class #fifthSection #storeHours .card-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+.templ3-class #fifthSection #storeHours #sched-content {
+  padding-bottom: 20px; 
 }
 .templ3-class #sixthSection {
   text-align: center;
   font-size: 25px;
-  color: grey;
+  color: #424242;
   margin-bottom: 0px;
 }
+.templ3-class .footer-copyright {
+  color: #424242;
+}
+.templ3-class #seventhSection {
+  height: 180px;
+}
+.templ3-class #seventhSection i {
+  margin-left: 20px;
+}
+.templ3-class .btn {
+  height: auto;
+  width: auto;
+  padding: 5px 25px 5px 25px;
+}
+.templ3-class .page-footer hr {
+  display: block;
+  width: 40%;
+  border: 0;
+  border-top: 2px solid grey;
+}
+

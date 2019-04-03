@@ -1,10 +1,10 @@
 <div class="templ3-class">
     <header>
-        <nav id="header firstSection">
-            <div class="nav-wrapper green lighten-5 ">
+        <nav id="header card-panel firstSection">
+            <div class="nav-wrapper yellow lighten-4">
                 {{!-- Here goes the slogan, this would be the default --}}
-                <a href="#" class="grey-text brand-logo center">HONEST SOUTHERN FOOD</a>
-                <img class="responsive-img" src="{{userInfo.logo}}" alt="" id="logoImg">
+                <a href="#" class="brand-logo center">HONEST SOUTHERN FOOD</a>
+                {{!-- <img class="responsive-img" src="{{userInfo.logo}}" alt="" id="logoImg"> --}}
 
             </div>
         </nav>
@@ -18,23 +18,24 @@
 
     <div id="thirdSection">
         <nav>
-            <div class="nav-wrapper green lighten-5">
+            <div class="nav-wrapper yellow lighten-4">
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#fourthSection" class="grey-text">Services</a></li>
-                    <li><a href="#fifthSection" class="grey-text">Contact Us</a></li>
+                    <li><a href="#fourthSection" class="waves-effect btn">Services</a></li>
+                    <li><a href="#fifthSection" class="waves-effect btn">Contact Us</a></li>
                 </ul>
         </nav>
     </div>
 
     <div id="fourthSection">
         <img class="logo2Img" src="{{userInfo.logo}}" alt="">
-        <h5>Our Menu</h5>
+        <h4>Our Menu</h4>
         <hr />
         <div class="row">
             <div class="col s6 m5 offset-m1" id="pictureMenu">
                 {{!-- One user picture goes here, populated with pictureMenu() --}}
             </div>
             <div class="col s6 m6">
+                <br>
                 <img class="responsive-img" src="{{userInfo.services}}" width="600" alt="">
             </div>
         </div>
@@ -43,28 +44,29 @@
 
     <div id="fifthSection">
         <img class="logo2Img" src="{{userInfo.logo}}" alt="">
-        <h5>Contact Us</h5>
+        <h4>Contact Us</h4>
         <hr />
         <div class="row">
-            <div class="col s12 m10 offset-m1">
-                <div class="card horizontal medium">
-                    <div class="card-image" id="pictureCard">
-                        {{!-- One user picture goes here, populated with pictureCard() --}}
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <span class="card-title">Store Hours</span>
-                            <div id="sched-content">
-                                {{userInfo.schedule}}
-                                {{!-- Store hours goes here, filled with script below --}}
-                            </div>
-                        </div>
-                        <div class="card-content" id="map-display">
+            <div class="col s12 m4">
+                <div class="card-image" id="pictureCard">
 
+                </div>
+            </div>
+            <div class="col s12 m6 offset-m1">
+                <div class="card-panel">
+                    <div class="card-content" id="storeHours">
+                        <span class="card-title">Store Hours</span>
+                        <div id="sched-content">
+                            {{userInfo.schedule}}
+                            {{!-- Store hours goes here, filled with script below --}}
                         </div>
+                    </div>
+                    <div class="card-content" id="map-display">
+
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -79,19 +81,30 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copyright green lighten-5">
-            <div class="container grey-text">
+        <hr />
+
+        <div class="footer-copyright yellow lighten-4">
+            <div class="container">
                 © 2019 Copyright
             </div>
         </div>
     </footer>
 
-    {{!-- <div class="footer-copyright" id="sixthSection">
-        <ul id="bottomList" class=""> --}}
-            {{!-- <li>{{userInfo.phone}}</li> --}}
-            {{!-- <li>Drop us a line at {{userInfo.email}}</li>
-        </ul>
-    </div> --}}
+    {{!-- Div for buttons to show more templates --}}
+    <div class="center" id="seventhSection">
+        <br>
+        <h5>Click the buttons to see your info on different templates, or save your work</h5>
+        <br>
+        <a class="waves-effect waves-light btn light-green accent-4" id="templ1-look">Template 1<i
+                class="far fa-eye"></i></a>
+        <a class="waves-effect waves-light btn light-green accent-4" id="templ2-look">Template 2<i
+                class="far fa-eye"></i></a>
+        <a class="waves-effect waves-light btn light-green accent-4" id="save-pdf">Save as PDF<i
+                class="far fa-save"></i></a>
+        <a class="waves-effect waves-light btn light-green accent-4" id="save-code">Save Code<i
+                class="far fa-save"></i></a>
+        <br>
+    </div>
 
 </div>
 
@@ -99,6 +112,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEksOUoC96zDNpnC_IkaTfzxjokwUCnac&callback=initMap"
     type="text/javascript">  </script>
 <script>
+
     $(document).ready(function () {
         fillSlider();
         $('.slider').slider();
@@ -106,11 +120,8 @@
         pictureCard();
         //fillSchedule();
         fillPhone();
-
-
-
     });
-    
+
     function initMap() {
 
         var coordString = "{{userInfo.coordinates}}";
@@ -174,9 +185,9 @@ var scheString = "{{userInfo.schedule}}";
 var scheArr = scheString.split(",");
 console.log(scheArr);
 for (var i = 0; i < scheArr.length; i++) {
-    var pVar = $("<p>");
-    pVar.text(scheArr[i]);
-    $("#sched-content").append(pVar);
+var pVar = $("<p>");
+pVar.text(scheArr[i]);
+$("#sched-content").append(pVar);
 }
 }*/
 
