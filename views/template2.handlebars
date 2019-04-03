@@ -102,7 +102,7 @@
       <br>
       <a class="waves-effect waves-light btn light-green accent-4" id="templ1-look">Template 1<i
               class="far fa-eye"></i></a>
-      <a class="waves-effect waves-light btn light-green accent-4" id="templ2-look">Template 2<i
+      <a class="waves-effect waves-light btn light-green accent-4" id="templ3-look">Template 3<i
               class="far fa-eye"></i></a>
       <a class="waves-effect waves-light btn light-green accent-4" id="save-pdf">Save as PDF<i
               class="far fa-save"></i></a>
@@ -123,6 +123,10 @@
     fillSlider();
     fillSchedule();
     fillPhone();
+    var idToLink = "{{userInfo.id}}";
+    console.log (idToLink);
+    $("#templ1-look").attr("href","/template1/"+idToLink);
+    $("#templ3-look").attr("href","/template3/"+idToLink);
 
   });
   function initMap() {
@@ -144,7 +148,7 @@
     console.log(picArray);
     for (var i = 0; i < picArray.length; i++) {
       var divVar = $("<div class='col s4 template2-img'>");
-      var imgVar = $("<img class ='materialboxed' width='400' height='400'>");
+      var imgVar = $("<img class ='responsive-img'>");
       imgVar.attr("src", picArray[i]);
       divVar.append(imgVar);
       $("#pictureRow").append(divVar);
