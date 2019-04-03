@@ -1,30 +1,93 @@
 /* Styling for index.handlebars */
+.index-class {
+  font-family: 'Tenor Sans', sans-serif;
+}
 .index-class #modal-info .select-business {
   margin-right: 0%;
 }
+.index-class .nav-wrapper {
+  background-image: linear-gradient(to right, white, #b2ff59);
+  height: 80px;
+}
+.index-class #firstSection #header {
+  background-image: linear-gradient(to right, white, #b2ff59);
+  /* padding-left: 30px; */
+  left: 40%;
+  /* width: 800px; */
+  /* text-align: center; */
+}
+.index-class #firstSection .btn {
+  border-radius: 12px;
+  color: black;
+}
+.index-class .nav-wrapper #navButton {
+  margin-top: 20px;
+  margin-right: 40px;
+}
+.index-class #logoImg {
+  width: 15%;
+  height: 130px;
+  position: relative;
+  left: 20px;
+  top: 8px;
+}
+.index-class .container {
+  width: 100%;
+}
+.index-class h5 {
+  font-style: italic;
+  /* padding: 50px; */
+}
+.index-class #firstSection {
+  margin-top: 50px;
+}
+.index-class #firstSection .btn {
+  margin-top: 20px;
+  /* background-color: pink; */
+}
+.index-class #secondSection {
+  text-align: center;
+  padding-top: 20px;
+  background-color:#eeeeee;
+  height: 200px;
+}
+.index-class #secondSection h5 {
+  margin-bottom: 40px;
+}
 
 /* Styling for template1.handlebars */
+.templ1-class {
+  font-family: 'Cormorant SC', serif;
+}
 .templ1-class #logoImg {
   width: 10%;
   position: absolute;
-  left: 20px;
-  top: 8px;
+  left: 80px;
+  top: 25px;
   background-color: #ffeb3b;
 }
 
 .templ1-class #header {
-  height: 150px;
+  font-size: 18px;
+  height: 70px;
 }
 
 .templ1-class #nav-mobile {
   display: block;
 }
 .templ1-class #nav-mobile a {
+  font-size: 18px;
   padding-bottom: 1px;
   padding-top: 1px;
+  padding-right: 25px;
+
 }
 
-.templ1-class #firstSection, .templ1-class #thirdSection {
+.templ1-class #firstSection {
+  height: 300px;
+}
+
+.templ1-class #thirdSection {
   height: 400px;
 }
 
@@ -41,6 +104,10 @@
 }
 .templ1-class .secondary-content {
   color: black;
+}
+.templ1-class #secondSection {
+  padding-left: 300px; 
+  margin-left: 250px;
 }
 .templ1-class #template-slider .carousel-img {
   height: 350px;
@@ -61,7 +128,10 @@
   height: 450px;
 }
 .templ1-class #fourthSection #scheduleDiv .card-title{
-  margin-top: 40px;
+  margin-top: 20px;
+}
+.templ1-class #fourthSection  #map-display {
+  margin-top: 10px;
 }
 .templ1-class hr {
   display: block;
@@ -72,7 +142,12 @@
   margin-top: 20px;
 }
 .templ1-class #fourthSection #sched-content{
-  margin-top: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.templ1-class #fourthSection #schedTitle {
+  font-style: italic;
+  font-size: 24px;
 }
 
 /* Styling for template2.handlebars */
@@ -142,7 +217,7 @@
   padding-top: 20px;
   padding-right: 80px;
 }
-.templ3-class #fourthSection, .templ3-class #fifthSection {
+.templ3-class #fourthSection, .templ3-class #fifthSection, .templ3-class #sixthSection {
   background-color:#e8f5e9;
 }
 .templ3-class #fourthSection  .logo2Img, .templ3-class #fifthSection .logo2Img {
@@ -166,4 +241,10 @@
   border: 0;
   border-top: 5px solid #827717;
   margin-left: 7%;
+}
+.templ3-class #sixthSection {
+  text-align: center;
+  font-size: 25px;
+  color: grey;
+  margin-bottom: 0px;
 }
