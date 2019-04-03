@@ -113,8 +113,7 @@
 <script>
 
     $(document).ready(function () {
-
-
+        
         $("#businessInput").hide();
         $("#businessForm").hide();
 
@@ -147,6 +146,7 @@
             console.log(newBusiness, city);
             var query = "/api/yelp/" + newBusiness + "/" + city;
             console.log(query);
+            
             $.ajax(query, {
                 type: "GET"
             }).then(function (data) {
@@ -200,9 +200,12 @@
                     $('#modal1').modal('close');
                     console.log("MoreData", moreData);
                 });
+                
+                
             });
 
         });
+
         $("#temp1-link").attr("href","/template1/30");
         $("#temp2-link").attr("href","/template2/30");
         $("#temp3-link").attr("href","/template3/30");
