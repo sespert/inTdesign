@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "sher123",
     "database": "intdesign_db",
     "host": "localhost",
     "dialect": "mysql"
