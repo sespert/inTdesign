@@ -16,13 +16,15 @@
   /* width: 800px; */
   /* text-align: center; */
 }
+.index-class .nav-wrapper #navButton {
+  width: 180px;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-size: 20px;
+}
 .index-class #firstSection .btn {
   border-radius: 12px;
   color: black;
-}
-.index-class .nav-wrapper #navButton {
-  margin-top: 20px;
-  margin-right: 40px;
 }
 .index-class #logoImg {
   width: 15%;
