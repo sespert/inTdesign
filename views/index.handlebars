@@ -21,34 +21,34 @@
                 <div class="col s3 m3">
                     <div class="card">
                         <div class="card-image">
-                            <a id="temp1-link">
+                            <a class="temp1-link">
                                 <img src="assets/images/template1.png">
                             </a>
                         </div>
                     </div>
-                    <a class="btn grey lighten-2" href="">Template 1</a>
-
+                    <a class="btn grey lighten-2 temp1-link">Template 1</a>
+                
                 </div>
                 <div class="col s3 offset-s1 m3 offset-m1">
                     <div class="card">
                         <div class="card-image">
-                            <a id="temp2-link">
+                            <a class="temp2-link">
                                 <img src="assets/images/template2.png">
                             </a>
                         </div>
                     </div>
-                    <a class="btn grey lighten-2" href="">Template 2</a>
+                        <a class="btn grey lighten-2 temp2-link">Template 2</a>
 
                 </div>
                 <div class="col s3 offset-s1 m3 offset-m1">
                     <div class="card">
                         <div class="card-image">
-                            <a id="temp3-link">
+                            <a class="temp3-link">
                                 <img src="assets/images/template3.png">
                             </a>
                         </div>
                     </div>
-                    <a class="btn grey lighten-2" href="">Template 3</a>
+                        <a class="btn grey lighten-2 temp3-link">Template 3</a>
                 </div>
             </div>
         </div>
@@ -263,6 +263,7 @@
             );
         });
 
+        var idToLink;
         $(".modal").on("click", ".select-business", function (event) {
             var id = $(this).data("id");
             console.log("id from front end", id);
@@ -279,11 +280,11 @@
 
 
                 var query2 = "/api/addBusiness";
-                $.post(query2, dataObject).then(function (moreData) {
-                    var idToLink = moreData.id;
-                    $("#temp1-link").attr("href", "/template1/" + idToLink);
-                    $("#temp2-link").attr("href", "/template2/" + idToLink);
-                    $("#temp3-link").attr("href", "/template3/" + idToLink);
+                $.post(query2, dataObject).then (function(moreData) {                    
+                    idToLink = moreData.id;
+                    $(".temp1-link").attr("href","/template1/"+idToLink);
+                    $(".temp2-link").attr("href","/template2/"+idToLink);
+                    $(".temp3-link").attr("href","/template3/"+idToLink);
 
                     $('#modal1').modal('close');
 

@@ -91,7 +91,7 @@
     </footer>
 
     {{!-- Div for buttons to show more templates --}}
-    <div class="center" id="seventhSection">
+    <div class="center no-print" id="seventhSection">
         <br>
         <h5>Click the buttons to see your info on different templates, or save your work</h5>
         <br>
@@ -124,6 +124,9 @@
         console.log (idToLink);
         $("#templ1-look").attr("href","/template1/"+idToLink);
         $("#templ2-look").attr("href","/template2/"+idToLink);
+        $("#save-pdf").on("click", function() {
+            window.print();
+        });
         
     });
 
