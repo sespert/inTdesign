@@ -321,4 +321,9 @@
   border: 0;
   border-top: 2px solid grey;
 }
+@media print {
+  div.no-print {
+    display: none;
+  }
+}
 
