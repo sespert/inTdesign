@@ -41,6 +41,7 @@ People with no programming skills and a low budget can have a great website for 
 HTML, CSS, JavaScript, JQuery, Sequelize, NodeJS, Express, MySQL, Heroku, MaterializeCSS, Handlebars.
 
 ### New Technology
+
 MaterializeCSS for the Front End.
 
 ### API Reference
@@ -53,6 +54,8 @@ Google Maps API: Add simple, embeddable map images to your website with minimal 
 Back End (Fabian & Stoyan): API calls and HTML routes, Sequelize and MySql configuration, Handlebars scripts.
 
 Front End (Shirley & Diana): Main page and Templates styling and design, Handlebars configuration and scripts.
+
+[See the app in action here](https://intdesign.herokuapp.com)
 
 ## Copyright
 Fabian Diaz, Shirley Espert Galarce, Diana Pachon, Stoyan Shivarov.
