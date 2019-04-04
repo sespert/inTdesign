@@ -42,20 +42,36 @@
 }
 .index-class #firstSection {
   margin-top: 50px;
+  /* padding-left: 80px; */
+}
+.index-class #firstSection .row{
+  margin-left: 80px;
 }
 .index-class #firstSection .btn {
   margin-top: 20px;
   /* background-color: pink; */
 }
 .index-class #secondSection {
+  margin-top: 50px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 10px;
   background-color:#eeeeee;
-  height: 200px;
+  height: 160px;
 }
 .index-class #secondSection h5 {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
+.index-class #modal2 h4 {
+  font-size: 20px;
+}
+.index-class #modal2 span {
+  font-size: 18px;
+}
+.index-class #modal2 #contactUs{
+  font-size: 18px;
+  margin-top: 8px;
+}
+
 
 /* Styling for template1.handlebars */
 .templ1-class {
@@ -164,7 +180,9 @@
 }
 
 /* Styling for template2.handlebars */
-
+.templ1-class {
+  font-family: 'Montserrat', sans-serif;
+}
 .templ2-class #header {
   height: 100px;
   margin-top: 50px;
@@ -192,6 +210,11 @@
   margin-top: 8%;
   padding-top: 30px;
 }
+.templ2-class #thirdSection #textRow {
+  font-size: 20px;
+  margin-left: 100px;
+}
+
 .templ2-class #pictureRow {
   margin-left: 150px;
 }

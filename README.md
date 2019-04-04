@@ -4,7 +4,7 @@
 
 ![screenshot](https://github.com/sespert/inTdesign/blob/master/public/assets/images/App.png)
 
-## Project 3 - Full Stack Development Program University of Miami Cohort 2019
+## Project 2 - Full Stack Development Program University of Miami Cohort 2019
 
 ## Team Members
 
@@ -30,7 +30,7 @@ On the other hand, if the business is not published in Yelp, the user can fill o
 - Optional form fill.
 - Once website is ready, user can choose to save the code for later use or save it as a PDF file.
 
-![gif of app flow]()
+![gif of app flow](https://github.com/sespert/inTdesign/blob/master/public/assets/images/appFlow.gif)
  
 ### Motivation
 
