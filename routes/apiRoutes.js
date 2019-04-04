@@ -14,18 +14,39 @@ module.exports = function (app) {
         var name = req.params.businessName;
         
         var city = req.params.city;
+
+        var request = require("request");
+
+        var options = {
+            method: 'GET',
+            url: 'https://api.yelp.com/v3/businesses/search',
+            qs: { term: name, location: city },
+            headers:
+            {
+                'Postman-Token': '49aeea3f-8ce1-4b18-a6ff-d446b3a36267',
+                'cache-control': 'no-cache',
+                Authorization: 'Bearer 6mOLysbB4TWzxVVj53g49Xjlq-pH4r8wrkdguf3gUtdl9irTVoT4EKJWjhCmdT2_yV558KNdUkDQDmKugwWExwEbdO9jYg2yQanVWmxULR4naCadfCBuSU79TWyWXHYx'
+            }
+        };
+
+        request(options, function (error, response, body) {
+            if (error) throw new Error(error);
+            var results = JSON.parse(body);
+            console.log(results.businesses);
+            res.send(results.businesses);
+        });
+
         
-        client.search({
-            term: name,
-            location: city
-        }).then(response => {
+        // client.search({
+        //     term: name,
+        //     location: city
+        // }).then(response => {
             
-            var results = response.jsonBody.businesses;
+        //     console.log(response);
+        //     var results = response.jsonBody.businesses;
             
-            res.json(results);
-
-
-        }).catch(error => { console.log(error) });
+        //     res.json(results);
+        // }).catch(error => { console.log(error) });
     });
 
     app.get("/api/yelp/:specificId", function (somereq, res) {
