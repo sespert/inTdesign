@@ -47,6 +47,7 @@ MaterializeCSS for the Front End.
 ### API Reference
 
 Yelp Developers: Yelp Fusion and Yelp API.
+
 Google Maps API: Add simple, embeddable map images to your website with minimal code. 
 
 ## Contributions
