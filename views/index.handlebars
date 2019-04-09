@@ -267,33 +267,43 @@
         $(".modal").on("click", ".select-business", function (event) {
             var id = $(this).data("id");
             console.log("id from front end", id);
-            var query = "/api/yelp/" + id;
-            console.log("query segundo get", query);
-
-            $.ajax(query, {
+            
+            //validation query
+            var validQuery = "/validate/" + id;
+            $.ajax(validQuery, {
                 type: "GET"
-            }).then(function (data) {
+            }).then(function(existBusiness) {
 
+                if (existBusiness) {
+                    alert("Business already exists!!! Please contact your administrator");
+                }else {
+                    var query = "/api/yelp/" + id;
+                    console.log("query segundo get", query);
 
-                var dataObject = JSON.parse(data);
-                console.log(dataObject);
+                    $.ajax(query, {
+                        type: "GET"
+                    }).then(function (data) {
 
+                        var dataObject = JSON.parse(data);
+                        console.log(dataObject);
+                        var query2 = "/api/addBusiness";
+                        $.post(query2, dataObject).then(function (moreData) {
+                            idToLink = moreData.id;
+                            $(".temp1-link").attr("href", "/template1/" + idToLink);
+                            $(".temp2-link").attr("href", "/template2/" + idToLink);
+                            $(".temp3-link").attr("href", "/template3/" + idToLink);
 
-                var query2 = "/api/addBusiness";
-                $.post(query2, dataObject).then (function(moreData) {                    
-                    idToLink = moreData.id;
-                    $(".temp1-link").attr("href","/template1/"+idToLink);
-                    $(".temp2-link").attr("href","/template2/"+idToLink);
-                    $(".temp3-link").attr("href","/template3/"+idToLink);
+                            $('#modal1').modal('close');
 
-                    $('#modal1').modal('close');
+                            console.log("MoreData", idToLink);
+                        });
+                    });                    
+                }
+            })
 
-                    console.log("MoreData", idToLink);
-                });
+            // if id exists in database alert else proceed to query
 
-
-            });
-
+            
         });
 
 
