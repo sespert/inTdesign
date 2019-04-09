@@ -26,6 +26,18 @@ module.exports = function(app) {
     });
   });
 
+  //validate yelpId in database
+
+  app.get("/validate/:yelpId", function(req, res) {
+    db.users.findOne({ where: {yelpId: req.params.yelpId}}).then(function(existBusiness) {
+      if (existBusiness !==null) {
+        res.send(existBusiness.dataValues);
+      } else{
+        res.send(204);
+      }
+    });
+  });
+
   // Get user info by chosen Id and populates the chosen template
   app.get("/template1/:id", function(req, res) {
     db.users.findOne({ where: { id: req.params.id } }).then(function(userInfo) {
